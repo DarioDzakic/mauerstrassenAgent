@@ -1,63 +1,125 @@
+import os
+
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+from crewai.mcp import MCPServerStdio
+from crewai_tools import SerperDevTool, ScrapeWebsiteTool
+from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
+from pydantic import BaseModel
+
+
+# ── Structured output ──
+class PortfolioRecommendation(BaseModel):
+    stocks: list[dict]  # {ticker, trend, allocation_pct, shares, rationale}
+    summary: str
+    total_capital: float
+    risk_level: str
+
+
+# ── Knowledge sources (from knowledge/ directory) ──
+strategy_knowledge = TextFileKnowledgeSource(
+    file_paths=[
+        "knowledge/investment_strategies.md",
+        "knowledge/sector_analysis.md",
+        "knowledge/risk_frameworks.md",
+    ]
+)
+
 
 @CrewBase
-class Mauerstrassenagent():
-    """Mauerstrassenagent crew"""
+class MauerstrassenAgent:
+    """MauerstrassenAgent — AI Financial Manager Crew"""
 
-    agents: list[BaseAgent]
-    tasks: list[Task]
+    agents_config = "config/agents.yaml"
+    tasks_config = "config/tasks.yaml"
 
-    # Learn more about YAML configuration files here:
-    # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
-    # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
-    
-    # If you would like to add tools to your agents, you can learn more about it here:
-    # https://docs.crewai.com/concepts/agents#agent-tools
+    # ── Agents ──
     @agent
-    def researcher(self) -> Agent:
+    def strategy_advisor(self) -> Agent:
         return Agent(
-            config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=True
+            config=self.agents_config["strategy_advisor"],  # type: ignore[index]
+            knowledge_sources=[strategy_knowledge],
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def market_analyst(self) -> Agent:
         return Agent(
-            config=self.agents_config['reporting_analyst'], # type: ignore[index]
-            verbose=True
+            config=self.agents_config["market_analyst"],  # type: ignore[index]
+            tools=[SerperDevTool(), ScrapeWebsiteTool()],
         )
 
-    # To learn more about structured task outputs,
-    # task dependencies, and task callbacks, check out the documentation:
-    # https://docs.crewai.com/concepts/tasks#overview-of-a-task
+    @agent
+    def stock_screener(self) -> Agent:
+        return Agent(
+            config=self.agents_config["stock_screener"],  # type: ignore[index]
+            tools=[SerperDevTool(), ScrapeWebsiteTool()],
+        )
+
+    @agent
+    def report_checker(self) -> Agent:
+        return Agent(
+            config=self.agents_config["report_checker"],  # type: ignore[index]
+            tools=[SerperDevTool()],  # fallback
+            mcps=[
+                MCPServerStdio(
+                    command="python",
+                    args=["mcp_server/server.py"],
+                    env={"FINNHUB_API_KEY": os.getenv("FINNHUB_API_KEY", "")},
+                ),
+            ],
+        )
+
+    @agent
+    def portfolio_builder(self) -> Agent:
+        return Agent(
+            config=self.agents_config["portfolio_builder"],  # type: ignore[index]
+        )
+
+    # ── Tasks ──
     @task
-    def research_task(self) -> Task:
+    def strategy_task(self) -> Task:
+        return Task(config=self.tasks_config["strategy_task"])  # type: ignore[index]
+
+    @task
+    def trend_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'], # type: ignore[index]
+            config=self.tasks_config["trend_task"],  # type: ignore[index]
+            context=[self.strategy_task()],
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def screening_task(self) -> Task:
         return Task(
-            config=self.tasks_config['reporting_task'], # type: ignore[index]
-            output_file='report.md'
+            config=self.tasks_config["screening_task"],  # type: ignore[index]
+            context=[self.strategy_task(), self.trend_task()],
         )
 
+    @task
+    def checker_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["checker_task"],  # type: ignore[index]
+            context=[self.screening_task()],
+        )
+
+    @task
+    def portfolio_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["portfolio_task"],  # type: ignore[index]
+            context=[
+                self.strategy_task(),
+                self.screening_task(),
+                self.checker_task(),
+            ],
+            output_pydantic=PortfolioRecommendation,
+        )
+
+    # ── Crew ──
     @crew
     def crew(self) -> Crew:
-        """Creates the Mauerstrassenagent crew"""
-        # To learn how to add knowledge sources to your crew, check out the documentation:
-        # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
-
         return Crew(
-            agents=self.agents, # Automatically created by the @agent decorator
-            tasks=self.tasks, # Automatically created by the @task decorator
-            process=Process.sequential,
+            agents=self.agents,  # type: ignore[arg-type]
+            tasks=self.tasks,  # type: ignore[arg-type]
+            process=Process.hierarchical,
+            manager_llm="gpt-4o",
             verbose=True,
-            # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
