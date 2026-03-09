@@ -1,14 +1,19 @@
-import os
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from crewai.mcp import MCPServerStdio
-from crewai_tools import SerperDevTool, ScrapeWebsiteTool
+from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai_tools import SerperDevTool
 from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 from pydantic import BaseModel
+from typing import List
+import os
+
+from mauerstrassenagent.mcp.mcp_servers import get_mcp_tools
+
+from dotenv import load_dotenv
+load_dotenv()
 
 
-# ── Structured output ──
+# --- Structured output ---
 class PortfolioRecommendation(BaseModel):
     stocks: list[dict]  # {ticker, trend, allocation_pct, shares, rationale}
     summary: str
@@ -16,75 +21,88 @@ class PortfolioRecommendation(BaseModel):
     risk_level: str
 
 
-# ── Knowledge sources (from knowledge/ directory) ──
-strategy_knowledge = TextFileKnowledgeSource(
+# --- Knowledge sources ---
+strategy_source = TextFileKnowledgeSource(
     file_paths=[
-        "knowledge/investment_strategies.md",
-        "knowledge/sector_analysis.md",
-        "knowledge/risk_frameworks.md",
+        "investment_strategies.md",
+        "risk_frameworks.md",
     ]
 )
+sector_source = TextFileKnowledgeSource(
+    file_paths=["sector_analysis.md"]
+)
+
+# --- Shared tools ---
+search_tool = SerperDevTool()
 
 
 @CrewBase
 class MauerstrassenAgent:
     """MauerstrassenAgent — AI Financial Manager Crew"""
 
+    agents: List[BaseAgent]
+    tasks: List[Task]
+
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    # ── Agents ──
+    mcp_tools = get_mcp_tools()
+
+    # --- Agents (defined in sequential execution order) ---
     @agent
     def strategy_advisor(self) -> Agent:
         return Agent(
-            config=self.agents_config["strategy_advisor"],  # type: ignore[index]
-            knowledge_sources=[strategy_knowledge],
+            config=self.agents_config['strategy_advisor'],  # type: ignore[index]
+            verbose=True,
+            knowledge_sources=[strategy_source, sector_source],
         )
 
     @agent
     def market_analyst(self) -> Agent:
         return Agent(
-            config=self.agents_config["market_analyst"],  # type: ignore[index]
-            tools=[SerperDevTool(), ScrapeWebsiteTool()],
+            config=self.agents_config['market_analyst'],  # type: ignore[index]
+            verbose=True,
+            tools=[search_tool],
         )
 
     @agent
     def stock_screener(self) -> Agent:
         return Agent(
-            config=self.agents_config["stock_screener"],  # type: ignore[index]
-            tools=[SerperDevTool(), ScrapeWebsiteTool()],
+            config=self.agents_config['stock_screener'],  # type: ignore[index]
+            verbose=True,
+            tools=[search_tool],
         )
 
     @agent
-    def report_checker(self) -> Agent:
+    def stock_checker(self) -> Agent:
         return Agent(
-            config=self.agents_config["report_checker"],  # type: ignore[index]
-            tools=[SerperDevTool()],  # fallback
-            mcps=[
-                MCPServerStdio(
-                    command="python",
-                    args=["mcp_server/server.py"],
-                    env={"FINNHUB_API_KEY": os.getenv("FINNHUB_API_KEY", "")},
-                ),
-            ],
+            config=self.agents_config['stock_checker'],  # type: ignore[index]
+            verbose=True,
+            tools=self.mcp_tools + [search_tool],
         )
 
     @agent
     def portfolio_builder(self) -> Agent:
         return Agent(
-            config=self.agents_config["portfolio_builder"],  # type: ignore[index]
+            config=self.agents_config['portfolio_builder'],  # type: ignore[index]
+            verbose=True,
+            knowledge_sources=[strategy_source],
         )
 
-    # ── Tasks ──
+    # ── Tasks (strategy → trends → screening → check → portfolio) ──
     @task
     def strategy_task(self) -> Task:
-        return Task(config=self.tasks_config["strategy_task"])  # type: ignore[index]
+        return Task(
+            config=self.tasks_config["strategy_task"],  # type: ignore[index]
+            human_input=True
+        )
 
     @task
     def trend_task(self) -> Task:
         return Task(
             config=self.tasks_config["trend_task"],  # type: ignore[index]
             context=[self.strategy_task()],
+            human_input=True
         )
 
     @task
@@ -105,12 +123,9 @@ class MauerstrassenAgent:
     def portfolio_task(self) -> Task:
         return Task(
             config=self.tasks_config["portfolio_task"],  # type: ignore[index]
-            context=[
-                self.strategy_task(),
-                self.screening_task(),
-                self.checker_task(),
-            ],
-            output_pydantic=PortfolioRecommendation,
+            context=[self.strategy_task(), self.checker_task()],
+            markdown=True,
+            output_file='output/portfolio_recommendation.md'
         )
 
     # ── Crew ──
@@ -120,6 +135,13 @@ class MauerstrassenAgent:
             agents=self.agents,  # type: ignore[arg-type]
             tasks=self.tasks,  # type: ignore[arg-type]
             process=Process.hierarchical,
-            manager_llm="gpt-4o",
+            manager_llm=os.getenv("MANAGER_MODEL"),
             verbose=True,
+            embedder={  # type: ignore[arg-type]
+                "provider": "google-generativeai",
+                "config": {
+                    "model_name": os.getenv("EMBEDDINGS_GOOGLE_GENERATIVE_AI_MODEL_NAME"),
+                    "api_key": os.getenv("GEMINI_API_KEY"),
+                },
+            },
         )

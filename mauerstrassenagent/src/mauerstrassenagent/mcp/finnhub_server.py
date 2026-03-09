@@ -4,11 +4,13 @@ import os
 import httpx
 from mcp.server.fastmcp import FastMCP
 
+from dotenv import load_dotenv
+load_dotenv()
+
 FINNHUB_BASE = "https://finnhub.io/api/v1"
-API_KEY = os.getenv("FINNHUB_API_KEY", "")
+API_KEY = os.getenv("FINNHUB_API_KEY")
 
 mcp = FastMCP("finnhub-financial-data")
-
 
 def _get(endpoint: str, params: dict | None = None) -> dict:
     """Make an authenticated GET request to the Finnhub API."""
@@ -54,27 +56,38 @@ def get_financials_reported(symbol: str, freq: str = "annual") -> dict:
 
 
 @mcp.tool()
-def search_in_filing(symbol: str, query: str) -> dict:
-    """Search inside SEC filings (10-K/10-Q) for specific keywords.
+def get_company_news(symbol: str, from_date: str, to_date: str) -> list:
+    """Get latest company news articles. Free tier includes 1 year of history.
 
     Args:
         symbol: Stock ticker symbol (e.g. 'AAPL')
-        query: Search keyword (e.g. 'risk factors', 'revenue growth')
+        from_date: Start date in YYYY-MM-DD format
+        to_date: End date in YYYY-MM-DD format
     """
     return _get(
-        "/stock/search-in-filing",
-        {"symbol": symbol.upper(), "query": query},
+        "/company-news",
+        {"symbol": symbol.upper(), "from": from_date, "to": to_date},
     )
 
 
 @mcp.tool()
-def get_filing_sentiment(symbol: str) -> dict:
-    """Get sentiment analysis of the latest 10-K filing vs prior year.
+def get_recommendation_trends(symbol: str) -> list:
+    """Get latest analyst recommendation trends (buy, hold, sell counts).
 
     Args:
         symbol: Stock ticker symbol (e.g. 'AAPL')
     """
-    return _get("/stock/filings-sentiment", {"symbol": symbol.upper()})
+    return _get("/stock/recommendation", {"symbol": symbol.upper()})
+
+
+@mcp.tool()
+def get_quote(symbol: str) -> dict:
+    """Get real-time stock quote: current price, change, high/low, open, previous close.
+
+    Args:
+        symbol: Stock ticker symbol (e.g. 'AAPL')
+    """
+    return _get("/quote", {"symbol": symbol.upper()})
 
 
 if __name__ == "__main__":

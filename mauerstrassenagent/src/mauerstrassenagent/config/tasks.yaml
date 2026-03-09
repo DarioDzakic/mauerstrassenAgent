@@ -1,35 +1,40 @@
 strategy_task:
   description: >
-    Collect the user's investment parameters: available capital, risk
-    tolerance (conservative/moderate/aggressive), and investment horizon
-    (short <1y, mid 1-5y, long 5y+). Use the knowledge base to validate
-    their choices — if the profile has contradictions (e.g., aggressive
-    risk with 3-month horizon), educate and adjust. Output a structured
-    investment profile.
+    Interview the user to collect their investment parameters:
+    1. Available capital (in USD or EUR)
+    2. Risk tolerance — conservative, moderate, or aggressive
+    3. Investment time-frame — short (<1 year), mid (1-5 years), long (5+ years)
+
+    Use the knowledge base of investment strategies, risk frameworks, and
+    sector analysis to validate the user's answers. If the profile has
+    contradictions (e.g., aggressive risk with a 3-month horizon), educate
+    the user and adjust. Produce a structured investment strategy including
+    recommended strategy type and 2-3 sectors to focus on.
   expected_output: >
-    A structured investment profile containing: capital amount, risk level,
-    investment horizon, recommended strategy type (value/growth/momentum/
+    A structured investment strategy containing: capital amount, risk level,
+    investment horizon, recommended strategy type (value / growth / momentum /
     dividend), and 2-3 relevant sectors to focus on.
   agent: strategy_advisor
   human_input: true
 
 trend_task:
   description: >
-    Based on the investment profile from the strategy task, search for
-    current market trends that match the user's risk level and horizon.
-    Find 5 trends, each with: trend name, 1-paragraph description, and
-    why it fits the profile. Present them to the user for selection.
+    Based on the investment strategy produced by the strategy advisor,
+    search the web for 5 current market trends that match the user's risk
+    level, horizon, and recommended sectors. For each trend provide:
+    trend name, a 1-paragraph description, and why it fits the strategy.
+    Present the 5 trends and let the user choose one or more to pursue.
   expected_output: >
     5 market trends with descriptions and rationale, followed by the
-    user's selection of 1-3 trends to pursue further.
+    user's selection of which trends to invest in.
   agent: market_analyst
   human_input: true
 
 screening_task:
   description: >
-    For each trend the user selected, find the top 5 stocks that are
+    For each trend the user selected, search the web for the top 5 stocks
     best positioned to benefit. For each stock provide: ticker symbol,
-    company name, 2-sentence description of the business, and 1-sentence
+    company name, 2-sentence business description, and 1-sentence
     motivation explaining why this stock fits the trend. Consider the
     risk profile when filtering — no speculative micro-caps for
     conservative profiles.
@@ -41,32 +46,37 @@ screening_task:
 
 checker_task:
   description: >
-    For each stock candidate from the screening, use the Finnhub MCP
-    tools to validate fundamentals:
-    1. get_company_profile — confirm sector, market cap, exchange
-    2. get_basic_financials — pull P/E, margins, debt ratios, 52-week range
-    3. get_financials_reported — get annual income statement, balance sheet,
-       cash flow as reported
-    4. search_in_filing — search the latest 10-K for "risk factors",
-       "forward guidance", "revenue growth"
-    5. get_filing_sentiment — check for abnormal language shifts vs prior year
-    Produce a validation report per stock with a go/no-go recommendation.
-    If Finnhub has no data for a stock, use Serper as fallback.
+    For each stock candidate from the screening, use the Finnhub financial
+    data tools to validate fundamentals. Pull company profiles, basic
+    financial metrics, reported financials, and recent SEC filings.
+    Check filing sentiment. Complement with a web search when the Finnhub
+    data is insufficient. Produce a validation report per stock with a
+    go / no-go recommendation.
   expected_output: >
-    Per-stock validation report containing: key financial metrics, revenue
-    and profit trends, notable risk factors, sentiment flag (normal/abnormal),
-    and a go/no-go recommendation with reasoning.
-  agent: report_checker
+    Per-stock validation report containing: company profile summary, key
+    financial metrics (P/E, margins, debt ratios, revenue trend), filing
+    sentiment, notable risk factors, and a go / no-go recommendation
+    with clear reasoning.
+  agent: stock_checker
 
 portfolio_task:
   description: >
-    Using the investment profile and validated stock data, construct a
-    portfolio recommendation. For each recommended stock: allocation
-    percentage, approximate number of shares (based on the user's capital),
-    and a rationale for the weight. Ensure diversification across trends
-    and flag any concentration risk. The total allocation must equal 100%.
+    Using the investment strategy and the validated stock data, construct
+    a final portfolio recommendation. For each recommended stock provide:
+
+    - Ticker symbol
+    - Trend it belongs to
+    - Allocation percentage (total must equal 100 %)
+    - Approximate number of shares to buy (based on user's capital)
+    - Recommended buy price (current market price)
+    - Stop-loss price
+    - Brief rationale for the weight
+
+    Present the portfolio as a clean markdown table. Add a summary
+    paragraph explaining the overall strategy, diversification, and any
+    caveats. Flag concentration risks.
   expected_output: >
-    A portfolio table with columns: stock ticker, trend, allocation %,
-    approximate shares, rationale. Plus a summary paragraph explaining
-    the overall portfolio strategy and any caveats.
+    A markdown table with columns: Ticker | Trend | Allocation % | Shares |
+    Buy Price | Stop-Loss | Rationale. Plus a summary paragraph explaining
+    the portfolio strategy and any caveats.
   agent: portfolio_builder

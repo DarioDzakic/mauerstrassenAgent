@@ -5,6 +5,7 @@ import warnings
 from mauerstrassenagent.crew import MauerstrassenAgent
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+warnings.filterwarnings("ignore", category=FutureWarning, module="chromadb")
 
 
 def run():
