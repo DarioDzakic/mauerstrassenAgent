@@ -1,0 +1,933 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  16 MAR 2026 20:55
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-09-02>
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen148
+\@IEEEtrantmpdimenB=\dimen149
+\@IEEEtrantmpdimenC=\dimen150
+\@IEEEtrantmpcountA=\count275
+\@IEEEtrantmpcountB=\count276
+\@IEEEtrantmpcountC=\count277
+\@IEEEtrantmptoksA=\toks17
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+03.
+(/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen151
+-- This is a 10 point document.
+LaTeX Encoding Info:    Redeclaring text command \textunderscore (encoding ?) o
+n input line 937.
+\CLASSINFOnormalsizebaselineskip=\dimen152
+\CLASSINFOnormalsizeunitybaselineskip=\dimen153
+\IEEEnormaljot=\dimen154
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen155
+\IEEEquantizedlengthdiff=\dimen156
+\IEEEquantizedtextheightdiff=\dimen157
+\IEEEilabelindentA=\dimen158
+\IEEEilabelindentB=\dimen159
+\IEEEilabelindent=\dimen160
+\IEEEelabelindent=\dimen161
+\IEEEdlabelindent=\dimen162
+\IEEElabelindent=\dimen163
+\IEEEiednormlabelsep=\dimen164
+\IEEEiedmathlabelsep=\dimen165
+\IEEEiedtopsep=\skip49
+\c@section=\count278
+\c@subsection=\count279
+\c@subsubsection=\count280
+\c@paragraph=\count281
+\c@IEEEsubequation=\count282
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\c@figure=\count283
+\c@table=\count284
+\@IEEEeqnnumcols=\count285
+\@IEEEeqncolcnt=\count286
+\@IEEEsubeqnnumrollback=\count287
+\@IEEEquantizeheightA=\dimen166
+\@IEEEquantizeheightB=\dimen167
+\@IEEEquantizeheightC=\dimen168
+\@IEEEquantizeprevdepth=\dimen169
+\@IEEEquantizemultiple=\count288
+\@IEEEquantizeboxA=\box53
+\@IEEEtmpitemindent=\dimen170
+\IEEEPARstartletwidth=\dimen171
+\c@IEEEbiography=\count289
+\@IEEEtranrubishbin=\box54
+)
+** ATTENTION: Overriding command lockouts (line 2).
+(/opt/texlive/texdir/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen172
+))
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen173
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count290
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count291
+\leftroot@=\count292
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count293
+\DOTSCASE@=\count294
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen174
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count295
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count296
+\dotsspace@=\muskip17
+\c@parentequation=\count297
+\dspbrk@lvl=\count298
+\tag@help=\toks19
+\row@=\count299
+\column@=\count300
+\maxfields@=\count301
+\andhelp@=\toks20
+\eqnshift@=\dimen175
+\alignsep@=\dimen176
+\tagshift@=\dimen177
+\tagwidth@=\dimen178
+\totwidth@=\dimen179
+\lineht@=\dimen180
+\@envbody=\toks21
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/opt/texlive/texdir/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\c@ALC@unique=\count302
+\c@ALC@line=\count303
+\c@ALC@rem=\count304
+\c@ALC@depth=\count305
+\ALC@tlm=\skip55
+\algorithmicindent=\skip56
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen181
+\Gin@req@width=\dimen182
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count306
+\lst@gtempboxa=\box57
+\lst@token=\toks24
+\lst@length=\count307
+\lst@currlwidth=\dimen183
+\lst@column=\count308
+\lst@pos=\count309
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count310
+\lst@lineno=\count311
+\lst@maxwidth=\dimen186
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count312
+\lst@skipnumbers=\count313
+\lst@framebox=\box58
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/opt/texlive/texdir/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count314
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count315
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen187
+\Hy@linkcounter=\count316
+\Hy@pagecounter=\count317
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/opt/texlive/texdir/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count318
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count319
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen188
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count320
+\Field@Width=\dimen189
+\Fld@charsize=\dimen190
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count321
+\c@Item=\count322
+\c@Hfootnote=\count323
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count324
+\c@bookmark@seq@number=\count325
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(/opt/texlive/texdir/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip57
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count326
+)
+(out/main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+-- Lines per column: 56 (exact).
+(/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count327
+\scratchdimen=\dimen191
+\scratchbox=\box59
+\nofMPsegments=\count328
+\nofMParguments=\count329
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen192
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
+\everyMPtoPDFconversion=\toks26
+) (/opt/texlive/texdir/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count333
+Package hyperref Info: Link coloring OFF on input line 25.
+
+(out/main.out) (out/main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
+
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
+
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
+5.
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 7759) in paragraph at lines 53--63
+[]\OT1/ptm/b/n/10 Dario-Benjamin Dza-kic \OT1/ptm/m/n/10 de-signed and im-ple-m
+ented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 the first three agents: \OT1/ptm/m/it/10 Strat-egy Ad-vi-sor\OT
+1/ptm/m/n/10 , \OT1/ptm/m/it/10 Mar-ket
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/it/10 An-a-lyst\OT1/ptm/m/n/10 , and \OT1/ptm/m/it/10 Stock Screener
+\OT1/ptm/m/n/10 , to-gether with their
+ []
+
+
+Underfull \hbox (badness 6348) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 cor-re-spond-ing tasks (\OT1/pcr/m/n/10 strategy_task\OT1/ptm/m
+/n/10 , \OT1/pcr/m/n/10 trend_task\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 2772) in paragraph at lines 53--63
+\OT1/pcr/m/n/10 screening_task\OT1/ptm/m/n/10 ). He built the sector-analysis R
+AG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 the Finnhub MCP server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/p
+tm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 which ex-poses six financial-data tools
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 get_company_profile\OT1/ptm/m/n/10 , \OT1/pcr/
+m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_co
+mpany_news\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+[]\OT1/ptm/b/n/10 Marco Mag-yar \OT1/ptm/m/n/10 de-signed and im-ple-mented the
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 re-main-ing two agents: \OT1/ptm/m/it/10 Stock Checker \OT1/ptm
+/m/n/10 and \OT1/ptm/m/it/10 Port-fo-lio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/it/10 Builder\OT1/ptm/m/n/10 , to-gether with their cor-re-spond-ing
+ tasks
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 checker_task\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 
+portfolio_task\OT1/ptm/m/n/10 ). He built
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 the investment-strategy and risk-framework RAG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 knowl-edge sources (\OT1/pcr/m/n/10 investment_strategies.md\OT
+1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 in-te-gra-tion layer (\OT1/pcr/m/n/10 mcp_servers.py\OT1/ptm/m/
+n/10 ) that con-nects the
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 with a man-ager LLM and the Google Gen-er-a-tive AI
+ []
+
+
+LaTeX Warning: Citation `CrewAI2024' on page 1 undefined on input line 92.
+
+
+
+
+LaTeX Warning: Citation `Finnhub2024' on page 1 undefined on input line 100.
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 118--121
+[]\OT1/ptm/b/n/10 RAG (Retrieval-Augmented Gen-er-a-tion): \OT1/ptm/m/n/10 Do-m
+ain
+ []
+
+
+Underfull \hbox (badness 5696) in paragraph at lines 118--121
+\OT1/ptm/m/n/10 knowl-edge files are em-bed-ded and made avail-
+ []
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 118--121
+\OT1/ptm/m/n/10 able to agents at in-fer-ence time via Cre-wAI's
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 121--124
+\OT1/ptm/m/n/10 MCP server ex-poses real-time fi-nan-cial data tools
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 121--124
+\OT1/ptm/m/n/10 over stdio trans-port, con-sumed by agents through
+ []
+
+
+
+[1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texli
+ve/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 193--197
+[]\OT1/ptm/b/n/10 Strategy Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 strategy_task\
+OT1/ptm/m/n/10 , agent:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--197
+\OT1/pcr/m/n/10 strategy_advisor\OT1/ptm/m/n/10 ) --- In-ter-views the user
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--202
+[]\OT1/ptm/b/n/10 Trend Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 trend_task\OT1/pt
+m/m/n/10 , agent:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--207
+[]\OT1/ptm/b/n/10 Screening Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 screening_tas
+k\OT1/ptm/m/n/10 , agent:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--207
+\OT1/ptm/m/n/10 per se-lected trend. Con-text: \OT1/pcr/m/n/10 strategy_task\OT
+1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+[]\OT1/ptm/b/n/10 Checker Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 checker_task\OT
+1/ptm/m/n/10 , agent:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--219
+[]\OT1/ptm/b/n/10 Portfolio Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 portfolio_tas
+k\OT1/ptm/m/n/10 , agent:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--219
+\OT1/pcr/m/n/10 portfolio_builder\OT1/ptm/m/n/10 ) --- Builds the fi-nal
+ []
+
+
+Underfull \hbox (badness 7064) in paragraph at lines 213--219
+\OT1/ptm/m/n/10 port-fo-lio as a mark-down ta-ble with al-lo-ca-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--219
+\OT1/pcr/m/n/10 output/portfolio_recommendation.md\OT1/ptm/m/n/10 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
+[]\OT1/ptm/m/n/10 The crew uses a \OT1/ptm/b/n/10 hi-er-ar-chi-cal pro-cess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 Process.hierarchical\OT1/ptm/m/n/10 ) where a 
+man-ager LLM
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+[]\OT1/ptm/m/n/10 Both pre-vi-ous out-puts flow into the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
+[]\OT1/ptm/m/n/10 The screen-ing re-sults are passed to the
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 264--267
+\OT1/ptm/m/n/10 a Pydantic-validated \OT1/pcr/m/n/10 PortfolioRecommendation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--289
+[]\OT1/ptm/b/n/10 Human-in-the-loop in-ter-ac-tion: \OT1/ptm/m/n/10 The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--289
+\OT1/pcr/m/n/10 strategy_task \OT1/ptm/m/n/10 and \OT1/pcr/m/n/10 trend_task \O
+T1/ptm/m/n/10 use
+ []
+
+
+Underfull \hbox (badness 6268) in paragraph at lines 289--296
+[]\OT1/ptm/b/n/10 Hierarchical pro-cess with man-ager LLM: \OT1/ptm/m/n/10 In-
+ []
+
+
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
+[]\OT1/ptm/b/n/10 Markdown out-put ar-ti-fact: \OT1/ptm/m/n/10 The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
+\OT1/ptm/m/n/10 port-fo-lio task writes its re-sult to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
+\OT1/pcr/m/n/10 output/portfolio_recommendation.md\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 7379) in paragraph at lines 315--317
+[]\OT1/ptm/m/n/10 Three cu-rated knowl-edge doc-u-ments are em-bed-ded
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 315--317
+\OT1/ptm/m/n/10 and served to agents at in-fer-ence time via Cre-wAI's
+ []
+
+
+Underfull \hbox (badness 4048) in paragraph at lines 319--322
+[]\OT1/pcr/m/n/10 investment_strategies.md \OT1/ptm/m/n/10 --- Cov-ers value,
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 325--329
+[]\OT1/pcr/m/n/10 sector_analysis.md \OT1/ptm/m/n/10 --- Anal-y-ses seven sec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--338
+[]\OT1/ptm/m/n/10 Two knowl-edge source ob-jects are con-structed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--338
+\OT1/pcr/m/n/10 strategy_source \OT1/ptm/m/n/10 (in-vest-ment strate-gies + ris
+k
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 331--338
+\OT1/ptm/m/n/10 and the \OT1/pcr/m/n/10 portfolio_builder \OT1/ptm/m/n/10 (\OT1
+/pcr/m/n/10 strategy_source\OT1/ptm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 339--342
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 google-generativeai\OT1/ptm/m/n/10 ) con-fig-u
+red via en-vi-ron-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
+[]\OT1/ptm/m/n/10 A cus-tom \OT1/ptm/b/n/10 Finnhub MCP server
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 finnhub_server.py\OT1/ptm/m/n/10 ) is im-ple-m
+ented us-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
+[]\OT1/pcr/m/n/10 get_recommendation_trends \OT1/ptm/m/n/10 --- An-a-lyst
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 364--371
+[]\OT1/ptm/m/n/10 The MCP server is in-te-grated into Cre-wAI through
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--371
+\OT1/pcr/m/n/10 MCPServerAdapter \OT1/ptm/m/n/10 in \OT1/pcr/m/n/10 mcp_servers
+.py\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--371
+\OT1/ptm/m/n/10 which spawns the server as a sub-pro-cess via
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 364--371
+\OT1/pcr/m/n/10 StdioServerParameters \OT1/ptm/m/n/10 and con-verts MCP tools
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--394
+[]\OT1/ptm/b/n/10 MCP con-text size of Finnhub re-sponses. \OT1/ptm/m/n/10 The
+ []
+
+
+Underfull \hbox (badness 5217) in paragraph at lines 384--394
+\OT1/ptm/m/n/10 Finnhub API re-turns large JSON payloads---especially
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--394
+\OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 , which in-cludes full
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 395--403
+[]\OT1/ptm/b/n/10 Human in-put re-quested but not de-clared on the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--403
+\OT1/ptm/b/n/10 crew. \OT1/ptm/m/n/10 The \OT1/pcr/m/n/10 strategy_task \OT1/pt
+m/m/n/10 and \OT1/pcr/m/n/10 trend_task \OT1/ptm/m/n/10 set
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--412
+[]\OT1/ptm/b/n/10 Stock count not con-sis-tently five. \OT1/ptm/m/n/10 The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--422
+[]\OT1/ptm/b/n/10 Structured out-put not al-ways fol-lowed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--422
+\OT1/ptm/b/n/10 by Port-fo-lio Builder. \OT1/ptm/m/n/10 A Py-dan-tic model
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 413--422
+\OT1/ptm/m/n/10 pro-duce out-put that matched the schema. Fields were
+ []
+
+
+
+[3]
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+
+
+
+[4
+
+] (out/main.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-09-02>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4B82598149F2B77A5CD724139150410F;1518.
+ ) 
+Here is how much of TeX's memory you used:
+ 12686 strings out of 467748
+ 193748 string characters out of 5429049
+ 807732 words of memory out of 5000000
+ 41189 multiletter control sequences out of 15000+600000
+ 663511 words of font info for 111 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,8n,79p,294b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></op
+t/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></op
+t/texlive/texdir/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/te
+xdir/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dis
+t/fonts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on out/main.pdf (4 pages, 102760 bytes).
+PDF statistics:
+ 144 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,423 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  language=Python,
+  showstringspaces=false,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Mauerstrassen Agent}
+
+\author{\IEEEauthorblockN{Aktuelle Themen und Trends I und II \\
+BWSE - SS 2026}
+\IEEEauthorblockA{\textit{Group 7} \\
+Dario-Benjamin Dzakic -- 2310859034\\
+Marco Magyar -- 2410859018}
+}
+
+\maketitle
+
+\begin{abstract}
+Tick the boxes for the level your implementation achieves:
+
+\begin{itemize}
+    \item[$\square$] Minimal
+    \item[$\square$] Advanced
+    \item[$\boxtimes$] Expert
+\end{itemize}
+
+\end{abstract}
+
+%----------------------------------------------------------------------
+\section{Work Distribution}
+%----------------------------------------------------------------------
+
+\textbf{Dario-Benjamin Dzakic} designed and implemented the first three agents:
+\emph{Strategy Advisor}, \emph{Market Analyst}, and \emph{Stock Screener},
+together with their corresponding tasks (\texttt{strategy\_task},
+\texttt{trend\_task}, \texttt{screening\_task}).
+He built the sector-analysis RAG knowledge source
+(\texttt{sector\_analysis.md}) and authored the Finnhub MCP server
+(\texttt{finnhub\_server.py}), which exposes six financial-data tools
+(\texttt{get\_company\_profile}, \texttt{get\_basic\_financials},
+\texttt{get\_financials\_reported}, \texttt{get\_company\_news},
+\texttt{get\_recommendation\_trends}, \texttt{get\_quote}).
+
+\textbf{Marco Magyar} designed and implemented the remaining two agents:
+\emph{Stock Checker} and \emph{Portfolio Builder}, together with their
+corresponding tasks (\texttt{checker\_task}, \texttt{portfolio\_task}).
+He built the investment-strategy and risk-framework RAG knowledge sources
+(\texttt{investment\_strategies.md}, \texttt{risk\_frameworks.md}) and
+developed the MCP--CrewAI integration layer (\texttt{mcp\_servers.py})
+that connects the Finnhub MCP server to the CrewAI tool ecosystem via
+\texttt{MCPServerAdapter}.
+He also designed the overall crew orchestration, including the
+hierarchical process configuration with a manager LLM and the Google
+Generative AI embedding provider.
+
+Both team members contributed to architecture design, testing, and
+documentation.
+
+%----------------------------------------------------------------------
+\section{Problem Statement}
+%----------------------------------------------------------------------
+
+Retail investors face a complex, information-rich landscape when
+constructing equity portfolios. They must assess their own risk
+tolerance, identify current market trends, screen relevant stocks,
+validate fundamentals, and finally allocate capital in a diversified
+manner. Each of these steps requires different expertise---from
+behavioural finance to fundamental analysis---and performing them
+manually is time-consuming and error-prone.
+
+\textbf{Mauerstrassen Agent} is a multi-agent system built on
+CrewAI \cite{CrewAI2024} that automates this end-to-end portfolio
+construction workflow. Given a user's capital, risk tolerance, and
+investment horizon, the system produces a concrete, validated portfolio
+recommendation with position sizes, buy prices, and stop-loss levels.
+
+\textbf{Assumptions:}
+\begin{itemize}
+    \item The user has a brokerage account and can execute trades independently.
+    \item Market data retrieved via the Finnhub API \cite{Finnhub2024} and
+          web searches (Serper) is sufficiently up-to-date for portfolio
+          construction.
+    \item The system produces \emph{recommendations}, not financial advice
+          in a regulatory sense.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Architecture}
+%----------------------------------------------------------------------
+
+The system is implemented as a CrewAI \emph{crew} with five specialised
+agents orchestrated by a \textbf{hierarchical process}. A manager LLM
+coordinates agent execution, delegates tasks, and synthesises
+intermediate results. The architecture integrates three key
+technologies:
+
+\begin{enumerate}
+    \item \textbf{RAG (Retrieval-Augmented Generation):} Domain knowledge
+          files are embedded and made available to agents at inference time
+          via CrewAI's \texttt{TextFileKnowledgeSource}.
+    \item \textbf{MCP (Model Context Protocol):} A custom Finnhub MCP
+          server exposes real-time financial data tools over stdio
+          transport, consumed by agents through \texttt{MCPServerAdapter}.
+    \item \textbf{External Tools:} The Serper web-search tool provides
+          live market information for trend analysis and stock screening.
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\subsection{Agent Description}
+%----------------------------------------------------------------------
+
+The system comprises five agents, each with a distinct role:
+
+\begin{enumerate}
+
+\item \textbf{Strategy Advisor}
+(\texttt{strategy\_advisor}) ---
+An investment strategy expert that interviews the user via
+\texttt{human\_input} to collect capital, risk tolerance, and time
+horizon. It validates the user's profile against the RAG knowledge
+base (investment strategies, risk frameworks, sector analysis) to
+detect contradictions (e.g.\ aggressive risk with a 3-month horizon)
+and produces a structured investment strategy with recommended sectors.
+
+\textit{Knowledge sources:} \texttt{strategy\_source} (investment
+strategies + risk frameworks), \texttt{sector\_source} (sector
+analysis).
+
+\item \textbf{Market Analyst}
+(\texttt{market\_analyst}) ---
+Searches the web using \texttt{SerperDevTool} for five current market
+trends aligned with the user's strategy. Presents trends with
+rationales and lets the user select which to pursue via
+\texttt{human\_input}.
+
+\textit{Tools:} \texttt{SerperDevTool}.
+
+\item \textbf{Stock Screener}
+(\texttt{stock\_screener}) ---
+For each selected trend, searches the web for the top five stocks best
+positioned to benefit. Filters by market cap and liquidity appropriate
+to the risk profile.
+
+\textit{Tools:} \texttt{SerperDevTool}.
+
+\item \textbf{Stock Checker}
+(\texttt{stock\_checker}) ---
+The validation analyst that uses \textbf{MCP tools} (Finnhub API) to
+pull company profiles, financial metrics, reported financials, news,
+and analyst recommendations for each candidate stock. Produces a
+go/no-go signal per stock.
+
+\textit{Tools:} All six Finnhub MCP tools + \texttt{SerperDevTool}.
+
+\item \textbf{Portfolio Builder}
+(\texttt{portfolio\_builder}) ---
+Synthesises the validated stock list and the investment strategy into a
+final portfolio. Computes allocation percentages, share counts, buy
+prices, and stop-loss levels. Outputs a clean markdown table.
+
+\textit{Knowledge sources:} \texttt{strategy\_source}.
+
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\subsection{Task Description}
+%----------------------------------------------------------------------
+
+Five tasks form the pipeline, each assigned to one agent:
+
+\begin{enumerate}
+
+\item \textbf{Strategy Task} (\texttt{strategy\_task}, agent:
+\texttt{strategy\_advisor}) --- Interviews the user and produces a
+structured investment strategy (capital, risk level, horizon, strategy
+type, 2--3 target sectors). Uses \texttt{human\_input}.
+
+\item \textbf{Trend Task} (\texttt{trend\_task}, agent:
+\texttt{market\_analyst}) --- Searches for five market trends matching
+the strategy. User selects trends to pursue. Context:
+\texttt{strategy\_task}. Uses \texttt{human\_input}.
+
+\item \textbf{Screening Task} (\texttt{screening\_task}, agent:
+\texttt{stock\_screener}) --- Identifies up to five stocks per
+selected trend. Context: \texttt{strategy\_task},
+\texttt{trend\_task}.
+
+\item \textbf{Checker Task} (\texttt{checker\_task}, agent:
+\texttt{stock\_checker}) --- Validates each stock candidate using
+Finnhub MCP tools and web search. Produces per-stock go/no-go
+reports. Context: \texttt{screening\_task}.
+
+\item \textbf{Portfolio Task} (\texttt{portfolio\_task}, agent:
+\texttt{portfolio\_builder}) --- Builds the final portfolio as a
+markdown table with allocation, shares, prices, and stop-losses.
+Output is written to
+\texttt{output/portfolio\_recommendation.md}.
+Context: \texttt{strategy\_task}, \texttt{checker\_task}.
+
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\subsection{Flow}
+%----------------------------------------------------------------------
+
+The crew uses a \textbf{hierarchical process}
+(\texttt{Process.hierarchical}) where a manager LLM orchestrates the
+sequential execution of all five tasks. The interaction flow is:
+
+\begin{enumerate}
+    \item The \textbf{manager} delegates the \texttt{strategy\_task}
+          to the Strategy Advisor, which interviews the user.
+    \item The strategy output feeds into the \texttt{trend\_task},
+          delegated to the Market Analyst, which again involves the user.
+    \item Both previous outputs flow into the
+          \texttt{screening\_task}, delegated to the Stock Screener.
+    \item The screening results are passed to the
+          \texttt{checker\_task}, where the Stock Checker validates
+          each candidate via MCP (Finnhub) and web search.
+    \item Finally, the manager delegates the \texttt{portfolio\_task}
+          to the Portfolio Builder, which receives the original
+          strategy and the validation results to construct the final
+          recommendation.
+\end{enumerate}
+
+Task context dependencies ensure that each agent receives exactly the
+information it needs. The \texttt{human\_input} flag on the first two
+tasks creates an interactive loop where the user actively shapes the
+investment direction.
+
+%----------------------------------------------------------------------
+\section{Minimal}
+%----------------------------------------------------------------------
+
+The minimal functionality of the system comprises a working multi-agent
+crew with clearly separated roles:
+
+\begin{itemize}
+    \item \textbf{Five specialised agents}, each with a distinct role,
+          goal, and backstory defined in \texttt{agents.yaml}.
+    \item \textbf{Five sequential tasks} defined in \texttt{tasks.yaml},
+          with explicit context dependencies ensuring information flows
+          correctly through the pipeline.
+    \item \textbf{Structured output:} The final portfolio task produces
+          a Pydantic-validated \texttt{PortfolioRecommendation} model
+          containing stocks, summary, total capital, and risk level.
+    \item \textbf{CrewAI orchestration} via the \texttt{@CrewBase}
+          decorator pattern, with agents and tasks wired together in
+          \texttt{crew.py}.
+    \item \textbf{External tool integration:} The \texttt{SerperDevTool}
+          gives the Market Analyst and Stock Screener access to real-time
+          web search results.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Advanced}
+%----------------------------------------------------------------------
+
+Beyond the minimal system, the following advanced features are
+implemented:
+
+\begin{itemize}
+    \item \textbf{Human-in-the-loop interaction:} The
+          \texttt{strategy\_task} and \texttt{trend\_task} use
+          \texttt{human\_input=True}, allowing the user to provide
+          investment parameters and select trends interactively.
+          This ensures the system adapts to individual user needs
+          rather than running fully autonomously.
+    \item \textbf{Hierarchical process with manager LLM:} Instead of a
+          simple sequential process, the crew uses
+          \texttt{Process.hierarchical} with a dedicated manager model
+          (\texttt{MANAGER\_MODEL} environment variable). The manager
+          coordinates task delegation, handles inter-agent communication,
+          and synthesises results---mimicking a real investment team with
+          a senior portfolio manager overseeing analysts.
+    \item \textbf{Task context chaining:} Tasks declare explicit
+          \texttt{context} dependencies (e.g.\ \texttt{portfolio\_task}
+          receives context from both \texttt{strategy\_task} and
+          \texttt{checker\_task}), enabling rich information flow across
+          the pipeline.
+    \item \textbf{Markdown output artifact:} The portfolio task writes
+          its result to \texttt{output/portfolio\_recommendation.md},
+          producing a persistent, human-readable deliverable.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Expert}
+%----------------------------------------------------------------------
+
+The expert-level features distinguish this system through deep
+integration of RAG and MCP:
+
+\subsection{RAG --- Retrieval-Augmented Generation}
+
+Three curated knowledge documents are embedded and served to agents at
+inference time via CrewAI's \texttt{TextFileKnowledgeSource}:
+
+\begin{itemize}
+    \item \texttt{investment\_strategies.md} --- Covers value, growth,
+          momentum, dividend, and index/passive strategies with key
+          metrics and suitability profiles.
+    \item \texttt{risk\_frameworks.md} --- Defines conservative,
+          moderate, and aggressive risk levels with allocation limits,
+          drawdown tolerances, and common profile contradictions to flag.
+    \item \texttt{sector\_analysis.md} --- Analyses seven sectors
+          (Technology, Healthcare, Energy, Financials, Consumer
+          Discretionary, Consumer Staples, Industrials) with drivers,
+          risks, and sector rotation patterns.
+\end{itemize}
+
+Two knowledge source objects are constructed:
+\texttt{strategy\_source} (investment strategies + risk frameworks) and
+\texttt{sector\_source} (sector analysis). These are injected into the
+\texttt{strategy\_advisor} (both sources) and the
+\texttt{portfolio\_builder} (\texttt{strategy\_source}), giving these
+agents grounded domain knowledge that goes beyond what the base LLM
+knows.
+
+Embeddings are generated using Google Generative AI
+(\texttt{google-generativeai}) configured via environment variables,
+enabling semantic retrieval over the knowledge base.
+
+\subsection{MCP --- Model Context Protocol}
+
+A custom \textbf{Finnhub MCP server}
+(\texttt{finnhub\_server.py}) is implemented using the
+\texttt{FastMCP} framework. It exposes six financial-data tools over
+\textbf{stdio transport}:
+
+\begin{enumerate}
+    \item \texttt{get\_company\_profile} --- Company name, sector,
+          industry, market cap, exchange.
+    \item \texttt{get\_basic\_financials} --- P/E, P/B, ROE, margins,
+          52-week range, dividend yield.
+    \item \texttt{get\_financials\_reported} --- As-reported income
+          statement, balance sheet, cash flow (annual/quarterly).
+    \item \texttt{get\_company\_news} --- Recent company news articles.
+    \item \texttt{get\_recommendation\_trends} --- Analyst buy/hold/sell
+          recommendation counts.
+    \item \texttt{get\_quote} --- Real-time stock quote (price, change,
+          high/low, open, previous close).
+\end{enumerate}
+
+The MCP server is integrated into CrewAI through
+\texttt{MCPServerAdapter} in \texttt{mcp\_servers.py}, which spawns the
+server as a subprocess via \texttt{StdioServerParameters} and converts
+MCP tools into CrewAI-compatible tool objects. The
+\texttt{stock\_checker} agent receives all six MCP tools alongside the
+web search tool, enabling it to pull real financial data for stock
+validation.
+
+This architecture cleanly separates the data-access layer (MCP server)
+from the agent logic (CrewAI), following the Model Context Protocol
+standard for tool interoperability.
+
+%----------------------------------------------------------------------
+\section{Reflection}
+%----------------------------------------------------------------------
+
+During development and testing we encountered several issues that
+highlight the practical challenges of building LLM-based multi-agent
+systems.
+
+\textbf{MCP context size of Finnhub responses.}
+The Finnhub API returns large JSON payloads---especially
+\texttt{get\_financials\_reported}, which includes full income
+statements, balance sheets, and cash-flow data across multiple periods.
+When the \texttt{stock\_checker} agent called this tool for several
+stocks in sequence, the accumulated context quickly grew very large.
+This caused the LLM to hit token limits or to lose track of earlier
+validation results, degrading the quality of the go/no-go assessments.
+A possible mitigation would be to add a summarisation step inside the
+MCP tool or to limit the number of reporting periods returned.
+
+\textbf{Human input requested but not declared on the crew.}
+The \texttt{strategy\_task} and \texttt{trend\_task} set
+\texttt{human\_input=True} at the task level, which prompts the user
+for input during execution. However, the crew itself was not explicitly
+configured to expect human interaction, which led to unexpected
+blocking behaviour in certain execution environments. Ensuring that
+the crew-level configuration and the task-level flags are aligned is
+an important lesson for future projects.
+
+\textbf{Stock count not consistently five.}
+The \texttt{screening\_task} instructs the Stock Screener to return
+the ``top 5 stocks'' per selected trend. In practice, the agent
+sometimes returned fewer or more than five---depending on how the LLM
+interpreted the prompt and the availability of suitable candidates in
+the search results. Strict enforcement of output cardinality is
+difficult with free-form LLM generation; a post-processing validation
+step or a stricter output schema could help enforce the constraint.
+
+\textbf{Structured output not always followed by Portfolio Builder.}
+A Pydantic model (\texttt{PortfolioRecommendation}) was defined to
+structure the final output, but the Portfolio Builder did not
+consistently produce output that matched the schema. Fields were
+sometimes missing or formatted differently (e.g.\ allocation as a
+string instead of a number). This is a known limitation of relying on
+LLMs to produce structured output without explicit function-calling
+or JSON-mode enforcement---the agent sometimes preferred to write
+free-form markdown instead of adhering to the schema.
+
+\end{document}
