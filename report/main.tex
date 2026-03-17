@@ -55,24 +55,23 @@ implementiert: \emph{Strategy Advisor}, \emph{Market Analyst} und
 \emph{Stock Screener}, samt der zugehörigen Tasks
 (\texttt{strategy\_task}, \texttt{trend\_task},
 \texttt{screening\_task}). Er hat die RAG-Wissensquelle für
-Sektoranalyse (\texttt{sector\_analysis.md}) erstellt und den
-Finnhub-MCP-Server (\texttt{finnhub\_server.py}) geschrieben, der sechs
-Finanzdaten-Tools bereitstellt (\texttt{get\_company\_profile},
-\texttt{get\_basic\_financials}, \texttt{get\_financials\_reported},
-\texttt{get\_company\_news}, \texttt{get\_recommendation\_trends},
-\texttt{get\_quote}).
+Sektoranalyse (\texttt{sector\_analysis.md}) erstellt. Im
+Finnhub-MCP-Server hat er die Tools
+\texttt{get\_company\_profile},
+\texttt{get\_basic\_financials} und
+\texttt{get\_financials\_reported} implementiert.
 
 \textbf{Marco Magyar} hat die restlichen zwei Agents entworfen und
 implementiert: \emph{Stock Checker} und \emph{Portfolio Builder}, samt
 den zugehörigen Tasks (\texttt{checker\_task},
 \texttt{portfolio\_task}). Er hat die RAG-Wissensquellen für
 Anlagestrategien und Risikorahmen (\texttt{investment\_strategies.md},
-\texttt{risk\_frameworks.md}) erstellt und die MCP--CrewAI-Integrationsschicht
-(\texttt{mcp\_servers.py}) entwickelt, die den Finnhub-MCP-Server über
+\texttt{risk\_frameworks.md}) erstellt. Im Finnhub-MCP-Server hat er
+die Tools \texttt{get\_company\_news},
+\texttt{get\_recommendation\_trends} und \texttt{get\_quote}
+implementiert sowie die MCP--CrewAI-Integrationsschicht
+(\texttt{mcp\_servers.py}) entwickelt, die den Server über
 \texttt{MCPServerAdapter} an das CrewAI-Tool-Ökosystem anbindet.
-Außerdem hat er die gesamte Crew-Orchestrierung designed, inklusive
-hierarchischem Prozess mit Manager-LLM und dem Google Generative AI
-Embedding-Provider.
 
 Beide Teammitglieder haben an Architektur-Design, Tests und
 Dokumentation mitgearbeitet.
@@ -119,7 +118,7 @@ Ganze möglich:
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{architecture.png}}
-\caption{High-level system architecture. The Manager LLM orchestrates five specialized agents, each connected to external tools (Knowledge Base, Web Search, Finnhub MCP).}
+\caption{Systemarchitektur auf hoher Ebene. Das Manager-LLM orchestriert fünf spezialisierte Agents, die jeweils mit externen Tools verbunden sind (Wissensbasis, Websuche, Finnhub MCP).}
 \label{fig:architecture}
 \end{figure}
 
@@ -188,7 +187,7 @@ User nach Input, ab dem Screening läuft alles vollautomatisch.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{flow.png}}
-\caption{Interaction flow. The Manager LLM delegates tasks sequentially: strategy formulation, trend discovery (both with human input), stock screening, validation via Finnhub, and portfolio construction.}
+\caption{Interaktionsablauf. Das Manager-LLM delegiert die Tasks sequentiell: Strategieformulierung, Trenderkennung (beide mit menschlichem Input), Aktien-Screening, Validierung über Finnhub und Portfolioerstellung.}
 \label{fig:flow}
 \end{figure}
 %----------------------------------------------------------------------
@@ -290,30 +289,21 @@ weil die Orchestrierung selbst von einem LLM übernommen wird.
 \section{Reflexion}
 %----------------------------------------------------------------------
 
-Ein paar Sachen haben uns beim Entwickeln Probleme bereitet:
+Ein paar Sachen sind uns beim Entwickeln aufgefallen:
 
 \textbf{Finnhub-Antworten sind riesig.}
 \texttt{get\_financials\_reported} liefert komplette Finanzberichte
 über mehrere Perioden. Wenn der Stock Checker das für mehrere Aktien
-hintereinander aufgerufen hat, ist der Kontext explodiert und das LLM
-hat frühere Ergebnisse vergessen. Wir sollten wohl innerhalb des
-MCP-Tools zusammenfassen oder kürzen.
+hintereinander aufgerufen hat, ist der Kontext explodiert, frisst sehr viel Tokens.
 
 \textbf{Human-Input-Konfiguration passte nicht zusammen.}
-Wir haben \texttt{human\_input=True} auf zwei Tasks gesetzt, aber die
-Crew selbst nicht für menschliche Interaktion konfiguriert, was in
-manchen Umgebungen zu merkwürdigem Blockieren geführt hat. Lektion:
-Task-Level- und Crew-Level-Flags synchron halten.
+Wir haben \texttt{human\_input=True} auf zwei Tasks gesetzt, aber es hat auch Stock Screener manchmal nach Input gefragt.
 
 \textbf{Aktienanzahl schwankt.}
 Wir haben Top 5 Aktien pro Trend verlangt, aber das LLM hat
-manchmal drei oder sieben zurückgegeben. Exakte Anzahlen bei
-Freitext-Generierung durchzusetzen ist schwierig---ein strikteres
-Output-Schema würde helfen.
+manchmal drei oder sieben zurückgegeben. Exakte Anzahlen wurde nicht immer einghalten.
 
 \textbf{Strukturierter Output ist unzuverlässig.}
 Das Pydantic-Schema für das finale Portfolio wurde nicht immer
-eingehalten. Felder wurden übersprungen oder falsch formatiert. Ohne
-expliziten JSON-Mode oder Function-Calling-Erzwingung neigt der Agent
-dazu, einfach Freitext-Markdown zu schreiben.
+eingehalten. Felder wurden übersprungen oder falsch formatiert.
 \end{document}

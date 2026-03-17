@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  17 MAR 2026 12:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  17 MAR 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,140 +494,146 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
 (/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 3291) in paragraph at lines 53--64
+Underfull \hbox (badness 3291) in paragraph at lines 53--63
 []\OT1/ptm/b/n/10 Dario-Benjamin Dza-kic \OT1/ptm/m/n/10 hat die er-sten drei A
 gents
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 \OT1/ptm/m/n/10 ent-wor-fen und im-ple-men-tiert: \OT1/ptm/m/it/10 Strat-egy Ad
 -vi-sor\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 \OT1/ptm/m/it/10 Mar-ket An-a-lyst \OT1/ptm/m/n/10 und \OT1/ptm/m/it/10 Stock S
 creener\OT1/ptm/m/n/10 , samt der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 \OT1/ptm/m/n/10 zugeh[]origen Tasks (\OT1/pcr/m/n/10 strategy_task\OT1/ptm/m/n/
 10 , \OT1/pcr/m/n/10 trend_task\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
-\OT1/ptm/m/n/10 Sek-tor-anal-yse (\OT1/pcr/m/n/10 sector_analysis.md\OT1/ptm/m/
-n/10 ) er-stellt und
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/pcr/m/n/10 screening_task\OT1/ptm/m/n/10 ). Er hat die RAG-Wissensquelle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
-\OT1/ptm/m/n/10 den Finnhub-MCP-Server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/p
-tm/m/n/10 )
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 f[]ur Sek-tor-anal-yse (\OT1/pcr/m/n/10 sector_analysis.md\OT1/
+ptm/m/n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
-\OT1/ptm/m/n/10 geschrieben, der sechs Finanzdaten-Tools bere-it-stellt
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/ptm/m/n/10 er-stellt. Im Finnhub-MCP-Server hat er die Tools
  []
 
 
-Underfull \hbox (badness 6944) in paragraph at lines 53--64
-\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 get_company_profile\OT1/ptm/m/n/10 , \OT1/pcr/
-m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+\OT1/pcr/m/n/10 get_company_profile\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_basic_
+financials
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--64
-\OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_co
-mpany_news\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 []\OT1/ptm/b/n/10 Marco Mag-yar \OT1/ptm/m/n/10 hat die restlichen zwei Agents
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 \OT1/ptm/m/n/10 ent-wor-fen und im-ple-men-tiert: \OT1/ptm/m/it/10 Stock Checke
 r \OT1/ptm/m/n/10 und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 \OT1/ptm/m/it/10 Port-fo-lio Builder\OT1/ptm/m/n/10 , samt den zugeh[]origen Ta
 sks
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 checker_task\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 
 portfolio_task\OT1/ptm/m/n/10 ). Er hat
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 \OT1/ptm/m/n/10 die RAG-Wissensquellen f[]ur An-lages-trate-gien und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
 \OT1/ptm/m/n/10 Risiko-rah-men (\OT1/pcr/m/n/10 investment_strategies.md\OT1/pt
 m/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 7064) in paragraph at lines 65--76
-\OT1/ptm/m/n/10 Integrationsschicht (\OT1/pcr/m/n/10 mcp_servers.py\OT1/ptm/m/n
-/10 ) en-twick-elt, die
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/pcr/m/n/10 risk_frameworks.md\OT1/ptm/m/n/10 ) er-stellt. Im Finnhub-MCP-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--76
-\OT1/ptm/m/n/10 den Finnhub-MCP-Server []uber \OT1/pcr/m/n/10 MCPServerAdapter
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 Server hat er die Tools \OT1/pcr/m/n/10 get_company_news\OT1/pt
+m/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 65--76
-\OT1/ptm/m/n/10 an das CrewAI-Tool-[]Okosystem an-bindet. Au^^Yer-dem hat
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/pcr/m/n/10 get_recommendation_trends \OT1/ptm/m/n/10 und \OT1/pcr/m/n/10 g
+et_quote
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 65--76
-\OT1/ptm/m/n/10 er die gesamte Crew-Orchestrierung de-signed, inklu-sive
+Underfull \hbox (badness 2261) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 im-ple-men-tiert sowie die MCP--CrewAI-Integrationsschicht
  []
 
 
-Underfull \hbox (badness 3333) in paragraph at lines 84--89
+Underfull \hbox (badness 6016) in paragraph at lines 64--75
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 mcp_servers.py\OT1/ptm/m/n/10 ) en-twick-elt, 
+die den Server []uber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--75
+\OT1/pcr/m/n/10 MCPServerAdapter \OT1/ptm/m/n/10 an das CrewAI-Tool-[]Okosystem
+
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 83--88
 []\OT1/ptm/m/n/10 Ein Ak-tien-port-fo-lio von Hand zusam-men-zustellen ist
  []
 
 
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 105--109
+Underfull \hbox (badness 2073) in paragraph at lines 104--108
 []\OT1/ptm/m/n/10 Das Sys-tem ist eine CrewAI-Crew mit f[]unf Agents,
  []
 
 
-Underfull \hbox (badness 3189) in paragraph at lines 111--114
+Underfull \hbox (badness 3189) in paragraph at lines 110--113
 []\OT1/ptm/b/n/10 RAG: \OT1/ptm/m/n/10 Wir haben eigene Wis-sens-doku-mente (An
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
 []\OT1/ptm/b/n/10 MCP: \OT1/ptm/m/n/10 Ein eigener Finnhub-MCP-Server liefert
  []
 
 <architecture.png, id=52, 1122.1925pt x 464.73625pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
-Package pdftex.def Info: architecture.png  used on input line 121.
+Package pdftex.def Info: architecture.png  used on input line 120.
 (pdftex.def)             Requested size: 252.0pt x 104.35548pt.
 
 
@@ -636,117 +642,107 @@ ve/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
  <./architecture.png>]
-Underfull \hbox (badness 4621) in paragraph at lines 148--152
+Underfull \hbox (badness 4621) in paragraph at lines 147--151
 \OT1/ptm/m/n/10 chritt. Holt Pro-file, Fi-nanzkenn-zahlen, News und
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 148--152
+Underfull \hbox (badness 1946) in paragraph at lines 147--151
 \OT1/ptm/m/n/10 Analysten-Empfehlungen []uber MCP-Tools und gibt
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 164--166
+Underfull \hbox (badness 1748) in paragraph at lines 163--165
 []\OT1/ptm/m/n/10 Jeder Agent hat einen Task. Sie sind []uber Kontext-
  []
 
-<flow.png, id=69, 1188.44pt x 666.49pt>
+<flow.png, id=70, 1188.44pt x 666.49pt>
 File: flow.png Graphic file (type png)
 <use flow.png>
-Package pdftex.def Info: flow.png  used on input line 190.
+Package pdftex.def Info: flow.png  used on input line 189.
 (pdftex.def)             Requested size: 252.0pt x 141.31961pt.
 
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 232--243
+Underfull \hbox (badness 6691) in paragraph at lines 231--242
 []\OT1/ptm/b/n/10 Eigener MCP-Server: \OT1/ptm/m/n/10 Wir haben einen eige-nen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/ptm/m/n/10 Finnhub-MCP-Server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/ptm/m
 /n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/ptm/m/n/10 mit FastMCP gebaut, der sechs Tools []uber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/ptm/m/n/10 stdio bere-it-stellt: \OT1/pcr/m/n/10 get_company_profile\OT1/p
 tm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/pcr/m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 ,
  []
 
 
-Overfull \hbox (18.89725pt too wide) in paragraph at lines 232--243
+Overfull \hbox (18.89725pt too wide) in paragraph at lines 231--242
 \OT1/pcr/m/n/10 get_company_news\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_recommend
 ation_trends
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--242
 \OT1/ptm/m/n/10 und \OT1/pcr/m/n/10 get_quote\OT1/ptm/m/n/10 . Auf der CrewAI-S
 eite startet
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 265--268
+Underfull \hbox (badness 1939) in paragraph at lines 264--267
 []\OT1/pcr/m/n/10 risk_frameworks.md \OT1/ptm/m/n/10 --- Kon-ser-va-tive / mod-
 er-
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 268--270
+Underfull \hbox (badness 6220) in paragraph at lines 267--269
 []\OT1/pcr/m/n/10 sector_analysis.md \OT1/ptm/m/n/10 --- Sieben Sek-toren mit
  []
 
 
 
 [2 <./flow.png>]
-Underfull \hbox (badness 5490) in paragraph at lines 279--288
+Underfull \hbox (badness 5490) in paragraph at lines 278--287
 []\OT1/ptm/m/n/10 Statt eines ein-fachen se-quen-tiellen Prozesses nutzen
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 279--288
+Underfull \hbox (badness 3965) in paragraph at lines 278--287
 \OT1/ptm/m/n/10 wir einen hi-er-ar-chis-chen Prozess mit einem Manager-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--298
 []\OT1/ptm/b/n/10 Finnhub-Antworten sind riesig.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--298
 \OT1/pcr/m/n/10 get_financials_reported \OT1/ptm/m/n/10 liefert kom-plette
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 295--301
+Underfull \hbox (badness 1975) in paragraph at lines 294--298
 \OT1/ptm/m/n/10 Fi-nanzberichte []uber mehrere Pe-ri-o-den. Wenn der Stock
- []
-
-
-Underfull \hbox (badness 4872) in paragraph at lines 295--301
-\OT1/ptm/m/n/10 Ergeb-nisse vergessen. Wir soll-ten wohl in-ner-halb des
- []
-
-
-Underfull \hbox (badness 6380) in paragraph at lines 314--319
-\OT1/ptm/m/n/10 Schema f[]ur das fi-nale Port-fo-lio wurde nicht im-mer
  []
 
 
@@ -777,11 +773,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  12697 strings out of 467748
  194047 string characters out of 5429049
- 805732 words of memory out of 5000000
+ 806732 words of memory out of 5000000
  41210 multiletter control sequences out of 15000+600000
  663511 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,79p,338b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,350b,554s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/tex
 live/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/tex
@@ -790,7 +786,7 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on out/main.pdf (3 pages, 165695 bytes).
+Output written on out/main.pdf (3 pages, 164849 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams

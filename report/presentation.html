@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mauerstrassen Agent — Presentation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+      :root {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --surface2: #334155;
+        --accent: #38bdf8;
+        --accent2: #818cf8;
+        --accent3: #34d399;
+        --accent4: #fb923c;
+        --accent5: #f472b6;
+        --text: #f1f5f9;
+        --text-dim: #94a3b8;
+        --border: #475569;
+        --slide-w: 1280px;
+        --slide-h: 720px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background: #080c18;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 20px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .slide {
+        width: var(--slide-w);
+        height: var(--slide-h);
+        background: var(--bg);
+        border-radius: 16px;
+        padding: 56px 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          var(--accent2),
+          var(--accent5)
+        );
+      }
+
+      /* Slide number */
+      .slide-num {
+        position: absolute;
+        bottom: 24px;
+        right: 40px;
+        font-size: 13px;
+        color: var(--text-dim);
+        font-weight: 500;
+      }
+
+      /* Branding footer */
+      .slide-footer {
+        position: absolute;
+        bottom: 24px;
+        left: 40px;
+        font-size: 13px;
+        color: var(--text-dim);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+
+      /* ---- Title Slide ---- */
+      .slide.title-slide {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1a1040 50%,
+          #0f172a 100%
+        );
+      }
+      .slide.title-slide::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(56, 189, 248, 0.08),
+          transparent 70%
+        );
+        top: -100px;
+        right: -100px;
+      }
+      .title-icon {
+        font-size: 64px;
+        margin-bottom: 16px;
+      }
+      .title-slide h1 {
+        font-size: 56px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 12px;
+      }
+      .title-slide .subtitle {
+        font-size: 22px;
+        color: var(--text-dim);
+        font-weight: 400;
+        max-width: 700px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+      }
+      .title-meta {
+        display: flex;
+        gap: 32px;
+        font-size: 14px;
+        color: var(--text-dim);
+      }
+      .title-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* ---- Section headers ---- */
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        letter-spacing: -0.5px;
+      }
+      h2 .hl {
+        color: var(--accent);
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--accent);
+      }
+
+      p,
+      li {
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--text);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        padding: 4px 0 4px 24px;
+        position: relative;
+      }
+      ul li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* ---- Cards / Boxes ---- */
+      .card-grid {
+        display: grid;
+        gap: 16px;
+        flex: 1;
+      }
+      .card-grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card-grid.cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card-grid.cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .card {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+      }
+      .card .card-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+      .card h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .card p,
+      .card li {
+        font-size: 14px;
+        color: var(--text-dim);
+        line-height: 1.55;
+      }
+
+      /* ---- Pipeline / flow strip ---- */
+      .pipeline {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        flex: 1;
+      }
+      .pipeline-step {
+        flex: 1;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 18px 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+      }
+      .pipeline-step:first-child {
+        border-radius: 12px 0 0 12px;
+      }
+      .pipeline-step:last-child {
+        border-radius: 0 12px 12px 0;
+      }
+      .pipeline-step:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: -14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        color: var(--accent);
+        z-index: 2;
+        font-weight: 700;
+      }
+      .pipeline-step .step-num {
+        width: 30px;
+        height: 30px;
+        background: var(--accent);
+        color: var(--bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .pipeline-step h4 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .pipeline-step p {
+        font-size: 11.5px;
+        color: var(--text-dim);
+        line-height: 1.45;
+      }
+      .pipeline-step .badge {
+        margin-top: auto;
+        padding-top: 8px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .badge.human {
+        color: var(--accent4);
+      }
+      .badge.auto {
+        color: var(--accent3);
+      }
+
+      /* ---- Code block ---- */
+      .code-block {
+        background: #0d1117;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--text-dim);
+        overflow-x: auto;
+        white-space: pre;
+      }
+      .code-block .kw {
+        color: var(--accent2);
+      }
+      .code-block .fn {
+        color: var(--accent);
+      }
+      .code-block .str {
+        color: var(--accent3);
+      }
+      .code-block .cm {
+        color: #4a5568;
+        font-style: italic;
+      }
+      .code-block .dec {
+        color: var(--accent4);
+      }
+
+      /* ---- Table ---- */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13.5px;
+      }
+      th {
+        background: var(--surface);
+        padding: 10px 12px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--accent);
+        border-bottom: 2px solid var(--border);
+      }
+      td {
+        padding: 9px 12px;
+        border-bottom: 1px solid rgba(71, 85, 105, 0.4);
+        color: var(--text-dim);
+      }
+      tr:hover td {
+        background: rgba(56, 189, 248, 0.04);
+      }
+      td:first-child {
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      /* ---- Tag ---- */
+      .tag {
+        display: inline-block;
+        background: rgba(56, 189, 248, 0.15);
+        color: var(--accent);
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .tag.green {
+        background: rgba(52, 211, 153, 0.15);
+        color: var(--accent3);
+      }
+      .tag.purple {
+        background: rgba(129, 140, 248, 0.15);
+        color: var(--accent2);
+      }
+      .tag.orange {
+        background: rgba(251, 146, 60, 0.15);
+        color: var(--accent4);
+      }
+      .tag.pink {
+        background: rgba(244, 114, 182, 0.15);
+        color: var(--accent5);
+      }
+
+      /* ---- Two column layout ---- */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        flex: 1;
+      }
+      .two-col.wide-left {
+        grid-template-columns: 1.3fr 1fr;
+      }
+      .two-col.wide-right {
+        grid-template-columns: 1fr 1.3fr;
+      }
+
+      /* ---- Flex helpers ---- */
+      .flex-1 {
+        flex: 1;
+      }
+      .gap-12 {
+        gap: 12px;
+      }
+      .gap-16 {
+        gap: 16px;
+      }
+      .mt-auto {
+        margin-top: auto;
+      }
+      .mb-8 {
+        margin-bottom: 8px;
+      }
+      .mb-16 {
+        margin-bottom: 16px;
+      }
+      .text-dim {
+        color: var(--text-dim);
+      }
+      .text-sm {
+        font-size: 14px;
+      }
+      .text-xs {
+        font-size: 12px;
+      }
+
+      /* ---- Architecture Diagram (CSS) ---- */
+      .arch-diagram {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .arch-row {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+      }
+      .arch-box {
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 18px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        min-width: 130px;
+      }
+      .arch-box.manager {
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.15),
+          rgba(129, 140, 248, 0.15)
+        );
+        border-color: var(--accent);
+        font-size: 15px;
+        padding: 14px 28px;
+      }
+      .arch-box.user {
+        background: rgba(251, 146, 60, 0.1);
+        border-color: var(--accent4);
+        color: var(--accent4);
+      }
+      .arch-box.tool {
+        background: rgba(52, 211, 153, 0.08);
+        border-color: var(--accent3);
+        font-size: 12px;
+        min-width: 110px;
+      }
+      .arch-connector {
+        color: var(--text-dim);
+        font-size: 22px;
+        font-weight: 300;
+      }
+      .arch-vconnector {
+        color: var(--text-dim);
+        font-size: 18px;
+        text-align: center;
+      }
+
+      /* ---- Checklist ---- */
+      .checklist li {
+        padding: 6px 0 6px 32px;
+        position: relative;
+        font-size: 16px;
+      }
+      .checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent3);
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      /* ---- Blockquote ---- */
+      .insight {
+        background: rgba(56, 189, 248, 0.06);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 10px 10px 0;
+        padding: 16px 20px;
+        margin: 12px 0;
+        font-size: 15px;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+
+      /* ---- Reflection cards ---- */
+      .reflection-card {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 18px 20px;
+        border-left: 3px solid var(--accent4);
+      }
+      .reflection-card h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--accent4);
+      }
+      .reflection-card p {
+        font-size: 14px;
+        color: var(--text-dim);
+        line-height: 1.55;
+      }
+
+      /* ---- Force print colors globally ---- */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      /* ---- Print / PDF ---- */
+      @media print {
+        html,
+        body {
+          background: #080c18 !important;
+          color: #f1f5f9 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          gap: 0 !important;
+        }
+        .slide {
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          page-break-after: always;
+          page-break-inside: avoid;
+          break-after: page;
+          break-inside: avoid;
+          width: 100vw !important;
+          height: 100vh !important;
+          margin: 0 !important;
+          background: #0f172a !important;
+        }
+        .slide.title-slide {
+          background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1a1040 50%,
+            #0f172a 100%
+          ) !important;
+        }
+        .slide::before {
+          display: block !important;
+          background: linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8,
+            #f472b6
+          ) !important;
+        }
+        .card,
+        .reflection-card {
+          background: #1e293b !important;
+          border: 1px solid #475569 !important;
+        }
+        .reflection-card {
+          border-left: 3px solid #fb923c !important;
+        }
+        .pipeline-step {
+          background: #1e293b !important;
+          border: 1px solid #475569 !important;
+        }
+        .step-num {
+          background: #38bdf8 !important;
+          color: #0f172a !important;
+        }
+        .code-block {
+          background: #0d1117 !important;
+          border: 1px solid #475569 !important;
+        }
+        .arch-box {
+          background: #1e293b !important;
+          border: 1.5px solid #475569 !important;
+        }
+        .arch-box.manager {
+          background: linear-gradient(
+            135deg,
+            rgba(56, 189, 248, 0.15),
+            rgba(129, 140, 248, 0.15)
+          ) !important;
+          border-color: #38bdf8 !important;
+        }
+        .arch-box.user {
+          background: rgba(251, 146, 60, 0.1) !important;
+          border-color: #fb923c !important;
+        }
+        .arch-box.tool {
+          background: rgba(52, 211, 153, 0.08) !important;
+          border-color: #34d399 !important;
+        }
+        .tag {
+          background: rgba(56, 189, 248, 0.15) !important;
+          color: #38bdf8 !important;
+        }
+        .tag.green {
+          background: rgba(52, 211, 153, 0.15) !important;
+          color: #34d399 !important;
+        }
+        .tag.purple {
+          background: rgba(129, 140, 248, 0.15) !important;
+          color: #818cf8 !important;
+        }
+        .tag.orange {
+          background: rgba(251, 146, 60, 0.15) !important;
+          color: #fb923c !important;
+        }
+        .tag.pink {
+          background: rgba(244, 114, 182, 0.15) !important;
+          color: #f472b6 !important;
+        }
+        .insight {
+          background: rgba(56, 189, 248, 0.06) !important;
+          border-left: 3px solid #38bdf8 !important;
+        }
+        th {
+          background: #1e293b !important;
+        }
+        tr:hover td {
+          background: transparent !important;
+        }
+      }
+
+      @page {
+        size: landscape;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================ -->
+    <!-- SLIDE 1 — Title -->
+    <!-- ============================================================ -->
+    <div class="slide title-slide">
+      <div class="title-icon">📈</div>
+      <h1>Mauerstrassen Agent</h1>
+      <p class="subtitle">
+        Ein KI-Multi-Agent-System für automatisierte Portfolio-Empfehlungen —
+        powered by CrewAI, RAG & MCP
+      </p>
+      <div class="title-meta">
+        <span>👤 Dario-Benjamin Dzakic &nbsp;(2310859034)</span>
+        <span>👤 Marco Magyar &nbsp;(2410859018)</span>
+      </div>
+      <div class="title-meta" style="margin-top: 12px">
+        <span>📚 Aktuelle Themen und Trends I und II — BWSE SS 2026</span>
+        <span>🏷️ Group 7 — Expert Level</span>
+      </div>
+      <span class="slide-num">1 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2 — Problem -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2><span class="hl">Problem</span>stellung</h2>
+      <div class="two-col" style="align-items: center">
+        <div>
+          <p style="font-size: 18px; line-height: 1.7; margin-bottom: 20px">
+            Ein Aktienportfolio von Hand zusammenzustellen ist
+            <strong>zeitaufwändig</strong> und <strong>fehleranfällig</strong>.
+          </p>
+          <ul class="gap-12">
+            <li>Risikobereitschaft einschätzen</li>
+            <li>Markttrends verfolgen & filtern</li>
+            <li>Dutzende Aktien durchforsten</li>
+            <li>Fundamentaldaten prüfen</li>
+            <li>Allokation & Risikomanagement</li>
+          </ul>
+          <div class="insight" style="margin-top: 24px">
+            Die meisten Leute überspringen die Hälfte dieser Schritte — oder
+            verlieren sich in <em>Analyse-Paralyse</em>.
+          </div>
+        </div>
+        <div>
+          <div
+            class="card"
+            style="
+              background: linear-gradient(
+                135deg,
+                var(--surface),
+                rgba(56, 189, 248, 0.08)
+              );
+              padding: 28px;
+            "
+          >
+            <h3 style="font-size: 22px; margin-bottom: 16px">
+              💡 Unsere Lösung
+            </h3>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text)">
+              <strong>Mauerstrassen Agent</strong> automatisiert den gesamten
+              Prozess: Kapital, Risiko & Horizont angeben → fertiges Portfolio
+              mit konkreten Positionen, Kaufkursen und Stop-Losses.
+            </p>
+            <div
+              style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap"
+            >
+              <span class="tag">CrewAI</span>
+              <span class="tag purple">5 Agents</span>
+              <span class="tag green">RAG</span>
+              <span class="tag orange">MCP</span>
+              <span class="tag pink">Human-in-the-loop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">2 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 3 — Architektur Übersicht -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>System-<span class="hl">Architektur</span></h2>
+      <div class="arch-diagram">
+        <!-- User -->
+        <div class="arch-row">
+          <div class="arch-box user">👤 User</div>
+        </div>
+        <div class="arch-vconnector">↕ capital, risk, horizon</div>
+        <!-- Manager -->
+        <div class="arch-row">
+          <div class="arch-box manager">
+            🧠 Manager LLM — Hierarchical Orchestrator
+          </div>
+        </div>
+        <div class="arch-vconnector">↓ delegates tasks</div>
+        <!-- Agents -->
+        <div class="arch-row">
+          <div class="arch-box" style="border-color: var(--accent2)">
+            🎯 Strategy<br />Advisor
+          </div>
+          <div class="arch-box" style="border-color: var(--accent2)">
+            📊 Market<br />Analyst
+          </div>
+          <div class="arch-box" style="border-color: var(--accent2)">
+            🔍 Stock<br />Screener
+          </div>
+          <div class="arch-box" style="border-color: var(--accent2)">
+            ✅ Stock<br />Checker
+          </div>
+          <div class="arch-box" style="border-color: var(--accent2)">
+            🏗️ Portfolio<br />Builder
+          </div>
+        </div>
+        <div class="arch-vconnector">↓ uses</div>
+        <!-- Tools -->
+        <div class="arch-row">
+          <div class="arch-box tool">
+            📚 Knowledge Base<br /><span
+              style="font-size: 11px; color: var(--text-dim)"
+              >RAG / Embeddings</span
+            >
+          </div>
+          <div class="arch-box tool">
+            🌐 Web Search<br /><span
+              style="font-size: 11px; color: var(--text-dim)"
+              >Serper API</span
+            >
+          </div>
+          <div class="arch-box tool">
+            📡 Finnhub MCP<br /><span
+              style="font-size: 11px; color: var(--text-dim)"
+              >6 Financial Tools</span
+            >
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">3 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 4 — Die 5 Agents -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Die <span class="hl">5 Agents</span></h2>
+      <div class="card-grid cols-5" style="flex: 1">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h4>Strategy Advisor</h4>
+          <p>
+            Interviewt den User: Kapital, Risiko, Zeithorizont. Gleicht mit
+            RAG-Wissensbasis ab, erkennt Widersprüche.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px">
+            <span class="tag" style="font-size: 10px">RAG</span>
+            <span class="tag orange" style="font-size: 10px">Human Input</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h4>Market Analyst</h4>
+          <p>
+            Sucht 5 aktuelle Markttrends passend zur Strategie. User wählt
+            Trends aus.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px">
+            <span class="tag green" style="font-size: 10px">Web Search</span>
+            <span class="tag orange" style="font-size: 10px">Human Input</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h4>Stock Screener</h4>
+          <p>
+            Findet pro Trend bis zu 5 Aktien, gefiltert nach
+            Marktkapitalisierung & Liquidität.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px">
+            <span class="tag green" style="font-size: 10px">Web Search</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h4>Stock Checker</h4>
+          <p>
+            Validiert über Finnhub: Profile, Kennzahlen, News, Analysten.
+            Go/No-Go pro Aktie.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px">
+            <span class="tag purple" style="font-size: 10px">MCP</span>
+            <span class="tag green" style="font-size: 10px">Web Search</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏗️</div>
+          <h4>Portfolio Builder</h4>
+          <p>
+            Baut das finale Portfolio: Allokation, Stückzahlen, Kaufkurse,
+            Stop-Losses.
+          </p>
+          <div style="margin-top: auto; padding-top: 10px">
+            <span class="tag" style="font-size: 10px">RAG</span>
+            <span class="tag pink" style="font-size: 10px">Output File</span>
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">4 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5 — Task Pipeline -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Task-<span class="hl">Pipeline</span></h2>
+      <p class="text-dim mb-16">
+        Das Manager-LLM führt 5 Tasks sequenziell aus. Die ersten zwei fragen
+        den User, ab Task 3 läuft alles automatisch.
+      </p>
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="step-num">1</div>
+          <h4>Strategy Task</h4>
+          <p>User-Input sammeln, Strategie erstellen & validieren</p>
+          <div class="badge human">👤 Human Input</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">2</div>
+          <h4>Trend Task</h4>
+          <p>5 Markttrends finden, User wählen lassen</p>
+          <div class="badge human">👤 Human Input</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">3</div>
+          <h4>Screening Task</h4>
+          <p>Top 5 Aktien pro Trend über Web-Suche finden</p>
+          <div class="badge auto">⚡ Automatisch</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">4</div>
+          <h4>Checker Task</h4>
+          <p>Fundamentaldaten via Finnhub MCP validieren</p>
+          <div class="badge auto">⚡ Automatisch</div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">5</div>
+          <h4>Portfolio Task</h4>
+          <p>Finales Portfolio mit Allokation & Stop-Loss bauen</p>
+          <div class="badge auto">⚡ Automatisch</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; display: flex; gap: 16px">
+        <div class="card" style="flex: 1; padding: 14px 18px">
+          <p style="font-size: 13px">
+            <strong style="color: var(--accent)"
+              >Kontext-Abhängigkeiten:</strong
+            >
+            Jeder Task deklariert explizit seine Vorgänger — z.B. Screening
+            hängt von Strategie + Trends ab.
+          </p>
+        </div>
+        <div class="card" style="flex: 1; padding: 14px 18px">
+          <p style="font-size: 13px">
+            <strong style="color: var(--accent)">Output:</strong> Das finale
+            Portfolio wird als strukturiertes Markdown nach
+            <code style="color: var(--accent3)"
+              >output/portfolio_recommendation.md</code
+            >
+            geschrieben.
+          </p>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">5 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6 — Technologien: RAG -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Technologie: <span class="hl">RAG</span></h2>
+      <div class="two-col wide-right" style="flex: 1">
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <p style="font-size: 16px; line-height: 1.65">
+            Drei eigene Wissensdokumente, eingebettet über
+            <strong>Google Generative AI Embeddings</strong>, damit Agents zur
+            Laufzeit fundiertes Domänenwissen abrufen können.
+          </p>
+          <div class="card">
+            <h4 style="color: var(--accent3)">📄 investment_strategies.md</h4>
+            <p>Value, Growth, Momentum, Dividenden & passive Strategien</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--accent3)">📄 risk_frameworks.md</h4>
+            <p>
+              Konservative / moderate / aggressive Profile mit
+              Allokationsgrenzen
+            </p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--accent3)">📄 sector_analysis.md</h4>
+            <p>7 Sektoren mit Treibern, Risiken & Rotationsmustern</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 16px">Welche Agents nutzen RAG?</h3>
+          <div
+            class="card"
+            style="margin-bottom: 16px; border-left: 3px solid var(--accent2)"
+          >
+            <h4>🎯 Strategy Advisor</h4>
+            <p>
+              Nutzt alle drei Quellen, um die Strategie des Users zu validieren
+              und Widersprüche zu erkennen.
+            </p>
+          </div>
+          <div class="card" style="border-left: 3px solid var(--accent2)">
+            <h4>🏗️ Portfolio Builder</h4>
+            <p>
+              Nutzt Investment-Strategien als Wissensquelle für fundierte
+              Allokationsentscheidungen.
+            </p>
+          </div>
+          <div class="code-block" style="margin-top: 20px; font-size: 12px">
+            <span class="cm"># Embedding-Konfiguration in crew.py</span>
+            <span class="fn">embedder</span> = {
+            <span class="str">"provider"</span>:
+            <span class="str">"google-generativeai"</span>,
+            <span class="str">"config"</span>: {
+            <span class="str">"model_name"</span>: env(<span class="str"
+              >"EMBEDDINGS_MODEL"</span
+            >), <span class="str">"api_key"</span>: env(<span class="str"
+              >"GEMINI_API_KEY"</span
+            >), } }
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">6 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 7 — Technologien: MCP -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Technologie: <span class="hl">MCP Server</span></h2>
+      <div class="two-col" style="flex: 1">
+        <div>
+          <p style="font-size: 16px; line-height: 1.65; margin-bottom: 16px">
+            Eigener <strong>Finnhub MCP Server</strong> mit FastMCP —
+            kommuniziert über <strong>stdio-Protokoll</strong> und liefert
+            Echtzeit-Finanzdaten an den Stock Checker.
+          </p>
+          <div class="code-block" style="font-size: 12px">
+            <span class="cm"># finnhub_server.py</span>
+            <span class="kw">from</span> mcp.server.fastmcp
+            <span class="kw">import</span> FastMCP mcp = FastMCP(<span
+              class="str"
+              >"finnhub-financial-data"</span
+            >)
+
+            <span class="dec">@mcp.tool()</span>
+            <span class="kw">def</span>
+            <span class="fn">get_company_profile</span>(symbol: str):
+            <span class="str"
+              >"""Get company profile: name, sector, industry, market
+              cap."""</span
+            >
+            <span class="kw">return</span> _get(<span class="str"
+              >"/stock/profile2"</span
+            >, ...)
+
+            <span class="dec">@mcp.tool()</span>
+            <span class="kw">def</span>
+            <span class="fn">get_quote</span>(symbol: str):
+            <span class="str">"""Real-time stock quote."""</span>
+            <span class="kw">return</span> _get(<span class="str">"/quote"</span
+            >, ...)
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 12px">6 MCP Tools</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>get_company_profile</td>
+                <td>Name, Sektor, Branche, Market Cap</td>
+              </tr>
+              <tr>
+                <td>get_basic_financials</td>
+                <td>P/E, P/B, ROE, Margen, 52W Range</td>
+              </tr>
+              <tr>
+                <td>get_financials_reported</td>
+                <td>Income, Balance Sheet, Cash Flow</td>
+              </tr>
+              <tr>
+                <td>get_company_news</td>
+                <td>Aktuelle Nachrichten zur Aktie</td>
+              </tr>
+              <tr>
+                <td>get_recommendation_trends</td>
+                <td>Buy/Hold/Sell Analysten-Counts</td>
+              </tr>
+              <tr>
+                <td>get_quote</td>
+                <td>Echtzeit-Kurs, Hoch/Tief, Veränderung</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="card"
+            style="margin-top: 16px; border-left: 3px solid var(--accent3)"
+          >
+            <h4 style="color: var(--accent3); font-size: 14px">Integration</h4>
+            <p style="font-size: 13px">
+              <code style="color: var(--accent)">MCPServerAdapter</code> startet
+              den Server als Subprozess und konvertiert dessen Tools in
+              CrewAI-kompatible Objekte.
+            </p>
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">7 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 8 — Hierarchischer Prozess -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Hierarchischer <span class="hl">Prozess</span></h2>
+      <div class="two-col wide-left" style="flex: 1; align-items: center">
+        <div>
+          <p style="font-size: 16px; line-height: 1.7; margin-bottom: 20px">
+            Statt eines einfachen sequentiellen Ablaufs nutzen wir einen
+            <strong>hierarchischen Prozess</strong> mit einem Manager-LLM —
+            quasi wie ein <em>Senior-Portfoliomanager</em>, der ein
+            Analysten-Team leitet.
+          </p>
+          <ul style="margin-bottom: 20px">
+            <li>Manager-LLM entscheidet, welcher Agent wann dran ist</li>
+            <li>Fasst Zwischenergebnisse zusammen</li>
+            <li>
+              Stellt sicher, dass jeder Task den Kontext seiner Vorgänger erhält
+            </li>
+            <li>Orchestrierung selbst wird von einem LLM übernommen</li>
+          </ul>
+          <div class="code-block" style="font-size: 12.5px">
+            <span class="cm"># crew.py — Hierarchical Process</span>
+            <span class="dec">@crew</span>
+            <span class="kw">def</span> <span class="fn">crew</span>(self) ->
+            Crew: <span class="kw">return</span> Crew( agents=self.agents,
+            tasks=self.tasks, process=Process.<span class="fn"
+              >hierarchical</span
+            >, manager_llm=os.getenv(<span class="str">"MANAGER_MODEL"</span>),
+            )
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+          <div class="arch-box manager" style="width: 220px">
+            🧠 Manager LLM
+          </div>
+          <div class="arch-vconnector">↓ orchestriert</div>
+          <div
+            style="display: flex; flex-direction: column; gap: 8px; width: 100%"
+          >
+            <div
+              class="arch-box"
+              style="border-color: var(--accent2); width: 100%"
+            >
+              1 → Strategy Advisor
+            </div>
+            <div
+              class="arch-box"
+              style="border-color: var(--accent2); width: 100%"
+            >
+              2 → Market Analyst
+            </div>
+            <div
+              class="arch-box"
+              style="border-color: var(--accent2); width: 100%"
+            >
+              3 → Stock Screener
+            </div>
+            <div
+              class="arch-box"
+              style="border-color: var(--accent2); width: 100%"
+            >
+              4 → Stock Checker
+            </div>
+            <div
+              class="arch-box"
+              style="border-color: var(--accent2); width: 100%"
+            >
+              5 → Portfolio Builder
+            </div>
+          </div>
+          <div class="arch-vconnector">↓</div>
+          <div
+            class="arch-box"
+            style="
+              border-color: var(--accent3);
+              background: rgba(52, 211, 153, 0.08);
+              width: 220px;
+            "
+          >
+            📋 Portfolio Output
+          </div>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">8 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 9 — Implementation Levels -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2>Implementierungs-<span class="hl">Level</span></h2>
+      <div class="card-grid cols-3" style="flex: 1">
+        <div class="card" style="border-top: 3px solid var(--accent3)">
+          <h4
+            style="color: var(--accent3); font-size: 18px; margin-bottom: 12px"
+          >
+            ✅ Minimal
+          </h4>
+          <ul class="checklist">
+            <li>Mindestens 4 Agents → <strong>5 Agents</strong></li>
+            <li>Tool Use → <strong>Serper Web Search</strong></li>
+            <li>MCP-Server-Integration → <strong>Finnhub MCP</strong></li>
+          </ul>
+          <div class="insight" style="margin-top: auto; font-size: 13px">
+            Tasks über Kontext-Abhängigkeiten verkettet. Pydantic-Output-Schema
+            <code style="color: var(--accent)">PortfolioRecommendation</code>.
+          </div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent)">
+          <h4
+            style="color: var(--accent); font-size: 18px; margin-bottom: 12px"
+          >
+            ✅ Advanced
+          </h4>
+          <ul class="checklist">
+            <li>Mehr als 4 Agents → <strong>5 Agents</strong></li>
+            <li>Eigener MCP-Server → <strong>finnhub_server.py</strong></li>
+          </ul>
+          <p style="margin-top: 12px; font-size: 14px; color: var(--text-dim)">
+            <strong>Bonus Features:</strong>
+          </p>
+          <ul class="checklist">
+            <li>Human-in-the-loop (2 Tasks)</li>
+            <li>Markdown-Artefakt auf Festplatte</li>
+            <li>6 eigene MCP Tools</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent5)">
+          <h4
+            style="color: var(--accent5); font-size: 18px; margin-bottom: 12px"
+          >
+            ✅ Expert
+          </h4>
+          <ul class="checklist">
+            <li>RAG → <strong>3 Wissensdokumente</strong></li>
+            <li>Advanced Flow → <strong>Hierarchischer Prozess</strong></li>
+          </ul>
+          <p style="margin-top: 12px; font-size: 14px; color: var(--text-dim)">
+            <strong>Details:</strong>
+          </p>
+          <ul style="font-size: 13px">
+            <li>Google Generative AI Embeddings</li>
+            <li>Manager-LLM als Orchestrator</li>
+            <li>Explizite Task-Kontext-Deklaration</li>
+          </ul>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">9 / 10</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10 — Reflexion / Lessons Learned -->
+    <!-- ============================================================ -->
+    <div class="slide">
+      <h2><span class="hl">Reflexion</span> & Lessons Learned</h2>
+      <div class="card-grid cols-2" style="flex: 1">
+        <div class="reflection-card">
+          <h4>📦 Finnhub-Antworten sind riesig</h4>
+          <p>
+            <code style="color: var(--accent)">get_financials_reported</code>
+            liefert komplette Finanzberichte über mehrere Perioden. Wenn der
+            Stock Checker das für mehrere Aktien hintereinander aufgerufen hat,
+            ist der Kontext explodiert und frisst sehr viel Tokens.
+          </p>
+        </div>
+        <div class="reflection-card">
+          <h4>🔄 Human-Input-Konfiguration passte nicht zusammen</h4>
+          <p>
+            Wir haben
+            <code style="color: var(--accent)">human_input=True</code> auf zwei
+            Tasks gesetzt, aber es hat auch den Stock Screener manchmal nach
+            Input gefragt.
+          </p>
+        </div>
+        <div class="reflection-card">
+          <h4>📊 Aktienanzahl schwankt</h4>
+          <p>
+            Wir haben Top 5 Aktien pro Trend verlangt, aber das LLM hat manchmal
+            drei oder sieben zurückgegeben. Exakte Anzahlen wurden nicht immer
+            eingehalten.
+          </p>
+        </div>
+        <div class="reflection-card">
+          <h4>📝 Strukturierter Output unzuverlässig</h4>
+          <p>
+            Das Pydantic-Schema für das finale Portfolio wurde nicht immer
+            eingehalten. Felder wurden übersprungen oder falsch formatiert.
+          </p>
+        </div>
+      </div>
+      <span class="slide-footer">Mauerstrassen Agent</span>
+      <span class="slide-num">10 / 10</span>
+    </div>
+  </body>
+</html>
