@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  17 MAR 2026 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  17 MAR 2026 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -611,32 +611,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--91
  []
 
 
-Underfull \hbox (badness 3333) in paragraph at lines 99--104
+Underfull \hbox (badness 3333) in paragraph at lines 96--101
 []\OT1/ptm/m/n/10 Ein Ak-tien-port-fo-lio von Hand zusam-men-zustellen ist
  []
 
 
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 120--124
+Underfull \hbox (badness 2073) in paragraph at lines 117--121
 []\OT1/ptm/m/n/10 Das Sys-tem ist eine CrewAI-Crew mit f[]unf Agents,
  []
 
 
-Underfull \hbox (badness 3189) in paragraph at lines 126--129
+Underfull \hbox (badness 3189) in paragraph at lines 123--126
 []\OT1/ptm/b/n/10 RAG: \OT1/ptm/m/n/10 Wir haben eigene Wis-sens-doku-mente (An
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 []\OT1/ptm/b/n/10 MCP: \OT1/ptm/m/n/10 Ein eigener Finnhub-MCP-Server liefert
  []
 
 <architecture.png, id=52, 1122.1925pt x 464.73625pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
-Package pdftex.def Info: architecture.png  used on input line 136.
+Package pdftex.def Info: architecture.png  used on input line 133.
 (pdftex.def)             Requested size: 252.0pt x 104.35548pt.
 
 
@@ -645,67 +645,67 @@ ve/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
  <./architecture.png>]
-Underfull \hbox (badness 4621) in paragraph at lines 163--167
+Underfull \hbox (badness 4621) in paragraph at lines 160--164
 \OT1/ptm/m/n/10 chritt. Holt Pro-file, Fi-nanzkenn-zahlen, News und
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 163--167
+Underfull \hbox (badness 1946) in paragraph at lines 160--164
 \OT1/ptm/m/n/10 Analysten-Empfehlungen []uber MCP-Tools und gibt
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 179--181
+Underfull \hbox (badness 1748) in paragraph at lines 176--178
 []\OT1/ptm/m/n/10 Jeder Agent hat einen Task. Sie sind []uber Kontext-
  []
 
 <flow.png, id=68, 1188.44pt x 666.49pt>
 File: flow.png Graphic file (type png)
 <use flow.png>
-Package pdftex.def Info: flow.png  used on input line 205.
+Package pdftex.def Info: flow.png  used on input line 202.
 (pdftex.def)             Requested size: 252.0pt x 141.31961pt.
 
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 249--260
+Underfull \hbox (badness 6691) in paragraph at lines 246--257
 []\OT1/ptm/b/n/10 Eigener MCP-Server: \OT1/ptm/m/n/10 Wir haben einen eige-nen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/ptm/m/n/10 Finnhub-MCP-Server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/ptm/m
 /n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/ptm/m/n/10 mit FastMCP gebaut, der sechs Tools []uber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/ptm/m/n/10 stdio bere-it-stellt: \OT1/pcr/m/n/10 get_company_profile\OT1/p
 tm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/pcr/m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 ,
  []
 
 
-Overfull \hbox (18.89725pt too wide) in paragraph at lines 249--260
+Overfull \hbox (18.89725pt too wide) in paragraph at lines 246--257
 \OT1/pcr/m/n/10 get_company_news\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_recommend
 ation_trends
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--260
+Underfull \hbox (badness 10000) in paragraph at lines 246--257
 \OT1/ptm/m/n/10 und \OT1/pcr/m/n/10 get_quote\OT1/ptm/m/n/10 . Auf der CrewAI-S
 eite startet
  []
@@ -713,38 +713,38 @@ eite startet
 
 
 [2 <./flow.png>]
-Underfull \hbox (badness 1939) in paragraph at lines 282--285
+Underfull \hbox (badness 1939) in paragraph at lines 279--282
 []\OT1/pcr/m/n/10 risk_frameworks.md \OT1/ptm/m/n/10 --- Kon-ser-va-tive / mod-
 er-
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 285--287
+Underfull \hbox (badness 6220) in paragraph at lines 282--284
 []\OT1/pcr/m/n/10 sector_analysis.md \OT1/ptm/m/n/10 --- Sieben Sek-toren mit
  []
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 296--305
+Underfull \hbox (badness 5490) in paragraph at lines 293--302
 []\OT1/ptm/m/n/10 Statt eines ein-fachen se-quen-tiellen Prozesses nutzen
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 296--305
+Underfull \hbox (badness 3965) in paragraph at lines 293--302
 \OT1/ptm/m/n/10 wir einen hi-er-ar-chis-chen Prozess mit einem Manager-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
 []\OT1/ptm/b/n/10 Finnhub-Antworten sind riesig.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
 \OT1/pcr/m/n/10 get_financials_reported \OT1/ptm/m/n/10 liefert kom-plette
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 312--316
+Underfull \hbox (badness 1975) in paragraph at lines 309--313
 \OT1/ptm/m/n/10 Fi-nanzberichte []uber mehrere Pe-ri-o-den. Wenn der Stock
  []
 
@@ -789,7 +789,7 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dist/fon
 ts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on out/main.pdf (3 pages, 167564 bytes).
+Output written on out/main.pdf (3 pages, 167501 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
