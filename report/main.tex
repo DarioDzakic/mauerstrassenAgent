@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{placeins}
 
 \lstset{
   basicstyle=\ttfamily\footnotesize,
@@ -36,6 +37,21 @@ Marco Magyar -- 2410859018}
 \maketitle
 
 \begin{abstract}
+Diese Arbeit präsentiert \emph{Mauerstrassen Agent}, ein
+CrewAI-basiertes Multi-Agent-System zur automatisierten
+Aktienportfolioerstellung. Das System orchestriert fünf spezialisierte
+Agents über einen hierarchischen Prozess mit Manager-LLM: Ein Strategy
+Advisor erfasst Nutzerpräferenzen, ein Market Analyst identifiziert
+Markttrends, ein Stock Screener filtert passende Aktien, ein Stock
+Checker validiert diese über einen eigenen Finnhub-MCP-Server mit
+Echtzeit-Finanzdaten, und ein Portfolio Builder erstellt die finale
+Allokation mit Kaufkursen und Stop-Losses. Retrieval Augmented
+Generation (RAG) auf selbst erstellten Wissensdokumenten zu
+Anlagestrategien, Risikoprofilen und Sektoranalyse ergänzt das
+Domänenwissen der Agents. Das Ergebnis ist ein vollständiges
+Investmentportfolio als strukturiertes Markdown-Artefakt.
+
+\medskip
 Tick the boxes for the level your implementation achieves:
 
 \begin{itemize}
@@ -190,6 +206,8 @@ User nach Input, ab dem Screening läuft alles vollautomatisch.
 \caption{Interaktionsablauf. Das Manager-LLM delegiert die Tasks sequentiell: Strategieformulierung, Trenderkennung (beide mit menschlichem Input), Aktien-Screening, Validierung über Finnhub und Portfolioerstellung.}
 \label{fig:flow}
 \end{figure}
+
+\FloatBarrier
 %----------------------------------------------------------------------
 \section{Minimal}
 %----------------------------------------------------------------------

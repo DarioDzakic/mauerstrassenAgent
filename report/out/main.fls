@@ -156,6 +156,8 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/listings/lstlang1.sty
