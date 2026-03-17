@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1773694527.13358 "main.tex" "out/main.pdf" "main" 1773694528.63574 0
+["pdflatex"] 1773749948.49099 "main.tex" "out/main.pdf" "main" 1773749950.21786 0
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -27,6 +27,7 @@
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/opt/texlive/texdir/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
@@ -102,9 +103,11 @@
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1759376245 3628593 186cc5f0365d17fd5d56a26353148712 ""
   "/opt/texlive/texdir/texmf.cnf" 1759376174 555 bd60ff59e4d560b42d96b004436f91d3 ""
   "IEEEtran.cls" 1772877854 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "main.tex" 1773694524.89456 18646 041341d9e1d8a735fa7f660b6711973f ""
-  "out/main.aux" 1773694528.45061 1663 e1389c35e40373011ee95f0e956aaff8 "pdflatex"
-  "out/main.out" 1773694528.45376 1518 4b82598149f2b77a5cd724139150410f "pdflatex"
+  "architecture.png" 1773748917.85393 41369 ed7219f50ca23588afe035ac6ed60274 ""
+  "flow.png" 1773748931.15619 37636 dfa5674d35e00eb4387db48c08b4ec4a ""
+  "main.tex" 1773749945.65921 13630 2a2e2c7e4614319d6195508f308766c0 ""
+  "out/main.aux" 1773749950.02877 2606 8294fb47b15f576995259d3e25156d40 "pdflatex"
+  "out/main.out" 1773749950.03253 1331 8d3b572aa2fe6d517c3f3616f98bfebe "pdflatex"
   (generated)
   "out/main.aux"
   "out/main.log"

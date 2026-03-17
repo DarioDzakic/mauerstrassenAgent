@@ -1,0 +1,29 @@
+graph TD
+    User([User])
+    Manager[Manager LLM<br>Hierarchical Orchestrator]
+
+    SA[Strategy Advisor]
+    MA[Market Analyst]
+    SS[Stock Screener]
+    SC[Stock Checker]
+    PB[Portfolio Builder]
+
+    KB[(Knowledge Base)]
+    Web[[Web Search<br>Serper API]]
+    Finn[[Finnhub MCP<br>Financial Data]]
+
+    User -- capital, risk, horizon --> Manager
+    Manager --> SA
+    Manager --> MA
+    Manager --> SS
+    Manager --> SC
+    Manager --> PB
+
+    SA -. reads .-> KB
+    MA -. uses .-> Web
+    SS -. uses .-> Web
+    SC -. uses .-> Finn
+    SC -. uses .-> Web
+    PB -. reads .-> KB
+
+    PB -- portfolio recommendation --> User

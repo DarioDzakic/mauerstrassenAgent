@@ -1,0 +1,29 @@
+sequenceDiagram
+    actor User
+    participant Mgr as Manager LLM
+    participant SA as Strategy Advisor
+    participant MA as Market Analyst
+    participant SS as Stock Screener
+    participant SC as Stock Checker
+    participant PB as Portfolio Builder
+
+    User->>Mgr: Capital, risk tolerance, horizon
+    Mgr->>SA: Collect & validate strategy
+    SA-->>User: Clarifying questions
+    User-->>SA: Answers
+    SA->>Mgr: Investment strategy
+
+    Mgr->>MA: Find 5 market trends
+    MA->>Mgr: 5 trends
+    Mgr-->>User: Present trends
+    User-->>Mgr: Selected trends
+
+    Mgr->>SS: Screen top stocks per trend
+    SS->>Mgr: Stock candidates
+
+    Mgr->>SC: Validate stocks via Finnhub
+    SC->>Mgr: Go / No-go per stock
+
+    Mgr->>PB: Build final portfolio
+    PB->>Mgr: Portfolio table
+    Mgr->>User: Portfolio recommendation

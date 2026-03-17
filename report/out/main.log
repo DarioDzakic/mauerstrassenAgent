@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  16 MAR 2026 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  17 MAR 2026 12:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -489,397 +489,266 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
-5.
+6.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 7759) in paragraph at lines 53--63
-[]\OT1/ptm/b/n/10 Dario-Benjamin Dza-kic \OT1/ptm/m/n/10 de-signed and im-ple-m
-ented
+Underfull \hbox (badness 3291) in paragraph at lines 53--64
+[]\OT1/ptm/b/n/10 Dario-Benjamin Dza-kic \OT1/ptm/m/n/10 hat die er-sten drei A
+gents
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--63
-\OT1/ptm/m/n/10 the first three agents: \OT1/ptm/m/it/10 Strat-egy Ad-vi-sor\OT
-1/ptm/m/n/10 , \OT1/ptm/m/it/10 Mar-ket
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/n/10 ent-wor-fen und im-ple-men-tiert: \OT1/ptm/m/it/10 Strat-egy Ad
+-vi-sor\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--63
-\OT1/ptm/m/it/10 An-a-lyst\OT1/ptm/m/n/10 , and \OT1/ptm/m/it/10 Stock Screener
-\OT1/ptm/m/n/10 , to-gether with their
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/it/10 Mar-ket An-a-lyst \OT1/ptm/m/n/10 und \OT1/ptm/m/it/10 Stock S
+creener\OT1/ptm/m/n/10 , samt der
  []
 
 
-Underfull \hbox (badness 6348) in paragraph at lines 53--63
-\OT1/ptm/m/n/10 cor-re-spond-ing tasks (\OT1/pcr/m/n/10 strategy_task\OT1/ptm/m
-/n/10 , \OT1/pcr/m/n/10 trend_task\OT1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/n/10 zugeh[]origen Tasks (\OT1/pcr/m/n/10 strategy_task\OT1/ptm/m/n/
+10 , \OT1/pcr/m/n/10 trend_task\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 53--63
-\OT1/pcr/m/n/10 screening_task\OT1/ptm/m/n/10 ). He built the sector-analysis R
-AG
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/n/10 Sek-tor-anal-yse (\OT1/pcr/m/n/10 sector_analysis.md\OT1/ptm/m/
+n/10 ) er-stellt und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--63
-\OT1/ptm/m/n/10 the Finnhub MCP server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/p
-tm/m/n/10 ),
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/n/10 den Finnhub-MCP-Server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/p
+tm/m/n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--63
-\OT1/ptm/m/n/10 which ex-poses six financial-data tools
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+\OT1/ptm/m/n/10 geschrieben, der sechs Finanzdaten-Tools bere-it-stellt
  []
 
 
-Underfull \hbox (badness 6944) in paragraph at lines 53--63
+Underfull \hbox (badness 6944) in paragraph at lines 53--64
 \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 get_company_profile\OT1/ptm/m/n/10 , \OT1/pcr/
 m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--63
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
 \OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_co
 mpany_news\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-[]\OT1/ptm/b/n/10 Marco Mag-yar \OT1/ptm/m/n/10 de-signed and im-ple-mented the
-
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+[]\OT1/ptm/b/n/10 Marco Mag-yar \OT1/ptm/m/n/10 hat die restlichen zwei Agents
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-\OT1/ptm/m/n/10 re-main-ing two agents: \OT1/ptm/m/it/10 Stock Checker \OT1/ptm
-/m/n/10 and \OT1/ptm/m/it/10 Port-fo-lio
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 ent-wor-fen und im-ple-men-tiert: \OT1/ptm/m/it/10 Stock Checke
+r \OT1/ptm/m/n/10 und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-\OT1/ptm/m/it/10 Builder\OT1/ptm/m/n/10 , to-gether with their cor-re-spond-ing
- tasks
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+\OT1/ptm/m/it/10 Port-fo-lio Builder\OT1/ptm/m/n/10 , samt den zugeh[]origen Ta
+sks
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
 \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 checker_task\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 
-portfolio_task\OT1/ptm/m/n/10 ). He built
+portfolio_task\OT1/ptm/m/n/10 ). Er hat
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-\OT1/ptm/m/n/10 the investment-strategy and risk-framework RAG
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 die RAG-Wissensquellen f[]ur An-lages-trate-gien und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--75
-\OT1/ptm/m/n/10 knowl-edge sources (\OT1/pcr/m/n/10 investment_strategies.md\OT
-1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 Risiko-rah-men (\OT1/pcr/m/n/10 investment_strategies.md\OT1/pt
+m/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 64--75
-\OT1/ptm/m/n/10 in-te-gra-tion layer (\OT1/pcr/m/n/10 mcp_servers.py\OT1/ptm/m/
-n/10 ) that con-nects the
+Underfull \hbox (badness 7064) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 Integrationsschicht (\OT1/pcr/m/n/10 mcp_servers.py\OT1/ptm/m/n
+/10 ) en-twick-elt, die
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 64--75
-\OT1/ptm/m/n/10 with a man-ager LLM and the Google Gen-er-a-tive AI
+Underfull \hbox (badness 10000) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 den Finnhub-MCP-Server []uber \OT1/pcr/m/n/10 MCPServerAdapter
  []
 
 
-LaTeX Warning: Citation `CrewAI2024' on page 1 undefined on input line 92.
-
-
-
-
-LaTeX Warning: Citation `Finnhub2024' on page 1 undefined on input line 100.
-
-
-Underfull \hbox (badness 1762) in paragraph at lines 118--121
-[]\OT1/ptm/b/n/10 RAG (Retrieval-Augmented Gen-er-a-tion): \OT1/ptm/m/n/10 Do-m
-ain
+Underfull \hbox (badness 1558) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 an das CrewAI-Tool-[]Okosystem an-bindet. Au^^Yer-dem hat
  []
 
 
-Underfull \hbox (badness 5696) in paragraph at lines 118--121
-\OT1/ptm/m/n/10 knowl-edge files are em-bed-ded and made avail-
+Underfull \hbox (badness 2772) in paragraph at lines 65--76
+\OT1/ptm/m/n/10 er die gesamte Crew-Orchestrierung de-signed, inklu-sive
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 118--121
-\OT1/ptm/m/n/10 able to agents at in-fer-ence time via Cre-wAI's
+Underfull \hbox (badness 3333) in paragraph at lines 84--89
+[]\OT1/ptm/m/n/10 Ein Ak-tien-port-fo-lio von Hand zusam-men-zustellen ist
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 121--124
-\OT1/ptm/m/n/10 MCP server ex-poses real-time fi-nan-cial data tools
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 105--109
+[]\OT1/ptm/m/n/10 Das Sys-tem ist eine CrewAI-Crew mit f[]unf Agents,
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 121--124
-\OT1/ptm/m/n/10 over stdio trans-port, con-sumed by agents through
+Underfull \hbox (badness 3189) in paragraph at lines 111--114
+[]\OT1/ptm/b/n/10 RAG: \OT1/ptm/m/n/10 Wir haben eigene Wis-sens-doku-mente (An
+-
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+[]\OT1/ptm/b/n/10 MCP: \OT1/ptm/m/n/10 Ein eigener Finnhub-MCP-Server liefert
+ []
+
+<architecture.png, id=52, 1122.1925pt x 464.73625pt>
+File: architecture.png Graphic file (type png)
+<use architecture.png>
+Package pdftex.def Info: architecture.png  used on input line 121.
+(pdftex.def)             Requested size: 252.0pt x 104.35548pt.
 
 
 [1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texli
 ve/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 193--197
-[]\OT1/ptm/b/n/10 Strategy Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 strategy_task\
-OT1/ptm/m/n/10 , agent:
+ <./architecture.png>]
+Underfull \hbox (badness 4621) in paragraph at lines 148--152
+\OT1/ptm/m/n/10 chritt. Holt Pro-file, Fi-nanzkenn-zahlen, News und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--197
-\OT1/pcr/m/n/10 strategy_advisor\OT1/ptm/m/n/10 ) --- In-ter-views the user
+Underfull \hbox (badness 1946) in paragraph at lines 148--152
+\OT1/ptm/m/n/10 Analysten-Empfehlungen []uber MCP-Tools und gibt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--202
-[]\OT1/ptm/b/n/10 Trend Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 trend_task\OT1/pt
-m/m/n/10 , agent:
+Underfull \hbox (badness 1748) in paragraph at lines 164--166
+[]\OT1/ptm/m/n/10 Jeder Agent hat einen Task. Sie sind []uber Kontext-
+ []
+
+<flow.png, id=69, 1188.44pt x 666.49pt>
+File: flow.png Graphic file (type png)
+<use flow.png>
+Package pdftex.def Info: flow.png  used on input line 190.
+(pdftex.def)             Requested size: 252.0pt x 141.31961pt.
+
+
+
+Underfull \hbox (badness 6691) in paragraph at lines 232--243
+[]\OT1/ptm/b/n/10 Eigener MCP-Server: \OT1/ptm/m/n/10 Wir haben einen eige-nen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--207
-[]\OT1/ptm/b/n/10 Screening Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 screening_tas
-k\OT1/ptm/m/n/10 , agent:
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/ptm/m/n/10 Finnhub-MCP-Server (\OT1/pcr/m/n/10 finnhub_server.py\OT1/ptm/m
+/n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--207
-\OT1/ptm/m/n/10 per se-lected trend. Con-text: \OT1/pcr/m/n/10 strategy_task\OT
-1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/ptm/m/n/10 mit FastMCP gebaut, der sechs Tools []uber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--212
-[]\OT1/ptm/b/n/10 Checker Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 checker_task\OT
-1/ptm/m/n/10 , agent:
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/ptm/m/n/10 stdio bere-it-stellt: \OT1/pcr/m/n/10 get_company_profile\OT1/p
+tm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--219
-[]\OT1/ptm/b/n/10 Portfolio Task \OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 portfolio_tas
-k\OT1/ptm/m/n/10 , agent:
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/pcr/m/n/10 get_basic_financials\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--219
-\OT1/pcr/m/n/10 portfolio_builder\OT1/ptm/m/n/10 ) --- Builds the fi-nal
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 7064) in paragraph at lines 213--219
-\OT1/ptm/m/n/10 port-fo-lio as a mark-down ta-ble with al-lo-ca-tion,
+Overfull \hbox (18.89725pt too wide) in paragraph at lines 232--243
+\OT1/pcr/m/n/10 get_company_news\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 get_recommend
+ation_trends
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--219
-\OT1/pcr/m/n/10 output/portfolio_recommendation.md\OT1/ptm/m/n/10 .
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
+\OT1/ptm/m/n/10 und \OT1/pcr/m/n/10 get_quote\OT1/ptm/m/n/10 . Auf der CrewAI-S
+eite startet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
-[]\OT1/ptm/m/n/10 The crew uses a \OT1/ptm/b/n/10 hi-er-ar-chi-cal pro-cess
+Underfull \hbox (badness 1939) in paragraph at lines 265--268
+[]\OT1/pcr/m/n/10 risk_frameworks.md \OT1/ptm/m/n/10 --- Kon-ser-va-tive / mod-
+er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
-\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 Process.hierarchical\OT1/ptm/m/n/10 ) where a 
-man-ager LLM
- []
-
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--237
-[]\OT1/ptm/m/n/10 Both pre-vi-ous out-puts flow into the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
-[]\OT1/ptm/m/n/10 The screen-ing re-sults are passed to the
- []
-
-
-Underfull \hbox (badness 1701) in paragraph at lines 264--267
-\OT1/ptm/m/n/10 a Pydantic-validated \OT1/pcr/m/n/10 PortfolioRecommendation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--289
-[]\OT1/ptm/b/n/10 Human-in-the-loop in-ter-ac-tion: \OT1/ptm/m/n/10 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--289
-\OT1/pcr/m/n/10 strategy_task \OT1/ptm/m/n/10 and \OT1/pcr/m/n/10 trend_task \O
-T1/ptm/m/n/10 use
- []
-
-
-Underfull \hbox (badness 6268) in paragraph at lines 289--296
-[]\OT1/ptm/b/n/10 Hierarchical pro-cess with man-ager LLM: \OT1/ptm/m/n/10 In-
+Underfull \hbox (badness 6220) in paragraph at lines 268--270
+[]\OT1/pcr/m/n/10 sector_analysis.md \OT1/ptm/m/n/10 --- Sieben Sek-toren mit
  []
 
 
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-[]\OT1/ptm/b/n/10 Markdown out-put ar-ti-fact: \OT1/ptm/m/n/10 The
+[2 <./flow.png>]
+Underfull \hbox (badness 5490) in paragraph at lines 279--288
+[]\OT1/ptm/m/n/10 Statt eines ein-fachen se-quen-tiellen Prozesses nutzen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-\OT1/ptm/m/n/10 port-fo-lio task writes its re-sult to
+Underfull \hbox (badness 3965) in paragraph at lines 279--288
+\OT1/ptm/m/n/10 wir einen hi-er-ar-chis-chen Prozess mit einem Manager-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-\OT1/pcr/m/n/10 output/portfolio_recommendation.md\OT1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 295--301
+[]\OT1/ptm/b/n/10 Finnhub-Antworten sind riesig.
  []
 
 
-Underfull \hbox (badness 7379) in paragraph at lines 315--317
-[]\OT1/ptm/m/n/10 Three cu-rated knowl-edge doc-u-ments are em-bed-ded
+Underfull \hbox (badness 10000) in paragraph at lines 295--301
+\OT1/pcr/m/n/10 get_financials_reported \OT1/ptm/m/n/10 liefert kom-plette
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 315--317
-\OT1/ptm/m/n/10 and served to agents at in-fer-ence time via Cre-wAI's
+Underfull \hbox (badness 1975) in paragraph at lines 295--301
+\OT1/ptm/m/n/10 Fi-nanzberichte []uber mehrere Pe-ri-o-den. Wenn der Stock
  []
 
 
-Underfull \hbox (badness 4048) in paragraph at lines 319--322
-[]\OT1/pcr/m/n/10 investment_strategies.md \OT1/ptm/m/n/10 --- Cov-ers value,
+Underfull \hbox (badness 4872) in paragraph at lines 295--301
+\OT1/ptm/m/n/10 Ergeb-nisse vergessen. Wir soll-ten wohl in-ner-halb des
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 325--329
-[]\OT1/pcr/m/n/10 sector_analysis.md \OT1/ptm/m/n/10 --- Anal-y-ses seven sec-
+Underfull \hbox (badness 6380) in paragraph at lines 314--319
+\OT1/ptm/m/n/10 Schema f[]ur das fi-nale Port-fo-lio wurde nicht im-mer
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--338
-[]\OT1/ptm/m/n/10 Two knowl-edge source ob-jects are con-structed:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--338
-\OT1/pcr/m/n/10 strategy_source \OT1/ptm/m/n/10 (in-vest-ment strate-gies + ris
-k
- []
-
-
-Underfull \hbox (badness 2799) in paragraph at lines 331--338
-\OT1/ptm/m/n/10 and the \OT1/pcr/m/n/10 portfolio_builder \OT1/ptm/m/n/10 (\OT1
-/pcr/m/n/10 strategy_source\OT1/ptm/m/n/10 ),
- []
-
-
-Underfull \hbox (badness 4242) in paragraph at lines 339--342
-\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 google-generativeai\OT1/ptm/m/n/10 ) con-fig-u
-red via en-vi-ron-ment
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
-[]\OT1/ptm/m/n/10 A cus-tom \OT1/ptm/b/n/10 Finnhub MCP server
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
-\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 finnhub_server.py\OT1/ptm/m/n/10 ) is im-ple-m
-ented us-ing the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 358--360
-[]\OT1/pcr/m/n/10 get_recommendation_trends \OT1/ptm/m/n/10 --- An-a-lyst
- []
-
-
-Underfull \hbox (badness 2671) in paragraph at lines 364--371
-[]\OT1/ptm/m/n/10 The MCP server is in-te-grated into Cre-wAI through
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--371
-\OT1/pcr/m/n/10 MCPServerAdapter \OT1/ptm/m/n/10 in \OT1/pcr/m/n/10 mcp_servers
-.py\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--371
-\OT1/ptm/m/n/10 which spawns the server as a sub-pro-cess via
- []
-
-
-Underfull \hbox (badness 6125) in paragraph at lines 364--371
-\OT1/pcr/m/n/10 StdioServerParameters \OT1/ptm/m/n/10 and con-verts MCP tools
- []
-
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--394
-[]\OT1/ptm/b/n/10 MCP con-text size of Finnhub re-sponses. \OT1/ptm/m/n/10 The
- []
-
-
-Underfull \hbox (badness 5217) in paragraph at lines 384--394
-\OT1/ptm/m/n/10 Finnhub API re-turns large JSON payloads---especially
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--394
-\OT1/pcr/m/n/10 get_financials_reported\OT1/ptm/m/n/10 , which in-cludes full
- []
-
-
-Underfull \hbox (badness 1577) in paragraph at lines 395--403
-[]\OT1/ptm/b/n/10 Human in-put re-quested but not de-clared on the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--403
-\OT1/ptm/b/n/10 crew. \OT1/ptm/m/n/10 The \OT1/pcr/m/n/10 strategy_task \OT1/pt
-m/m/n/10 and \OT1/pcr/m/n/10 trend_task \OT1/ptm/m/n/10 set
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--412
-[]\OT1/ptm/b/n/10 Stock count not con-sis-tently five. \OT1/ptm/m/n/10 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--422
-[]\OT1/ptm/b/n/10 Structured out-put not al-ways fol-lowed
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--422
-\OT1/ptm/b/n/10 by Port-fo-lio Builder. \OT1/ptm/m/n/10 A Py-dan-tic model
- []
-
-
-Underfull \hbox (badness 2894) in paragraph at lines 413--422
-\OT1/ptm/m/n/10 pro-duce out-put that matched the schema. Fields were
- []
-
-
-
-[3]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -895,39 +764,36 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[4
+[3
 
 ] (out/main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B82598149F2B77A5CD724139150410F;1518.
+(rerunfilecheck)             Checksum: 8D3B572AA2FE6D517C3F3616F98BFEBE;1331.
  ) 
 Here is how much of TeX's memory you used:
- 12686 strings out of 467748
- 193748 string characters out of 5429049
- 807732 words of memory out of 5000000
- 41189 multiletter control sequences out of 15000+600000
+ 12697 strings out of 467748
+ 194047 string characters out of 5429049
+ 805732 words of memory out of 5000000
+ 41210 multiletter control sequences out of 15000+600000
  663511 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,79p,294b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></op
-t/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></op
-t/texlive/texdir/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/te
-xdir/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on out/main.pdf (4 pages, 102760 bytes).
+ 75i,8n,79p,338b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></o
+pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/tex
+live/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/tex
+live/texdir/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/texdir/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texdir/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/
+times/utmr8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on out/main.pdf (3 pages, 165695 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
